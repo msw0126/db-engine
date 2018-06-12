@@ -1,0 +1,10 @@
+INFO 2018-02-02 11:36:40,395 monitor 30114 139989169555200 Press Ctrl+C to exit
+INFO 2018-02-02 11:37:55,558 TaskDetect 30114 139988610049792 68-RobotXSpark6-68_3 submitted to task queue
+INFO 2018-02-02 11:46:30,528 TaskDetect 30114 139988599559936 68-RobotXSpark10-68_4 submitted to task queue
+INFO 2018-02-02 11:53:35,473 TaskDetect 30114 139988737804032 68-FeatureCombine13-68_5 submitted to task queue
+INFO 2018-02-02 12:14:20,531 TaskDetect 30114 139988716824320 68-RobotXSpark10-68_6 submitted to task queue
+INFO 2018-02-02 12:18:15,490 TaskDetect 30114 139988589070080 68-FeatureCombine13-68_6 submitted to task queue
+INFO 2018-02-02 12:21:15,480 TaskDetect 30114 139988610049792 68-AtomLearn14-68_6 submitted to task queue
+INFO 2018-02-02 12:25:45,566 TaskDetect 30114 139988589070080 68-AtomAct15-68_6 submitted to task queue
+INFO 2018-02-02 12:29:35,533 TaskDetect 30114 139988610049792 68-AtomTest16-68_6 submitted to task queue
+INFO 2018-02-02 16:02:15,480 TaskDetect 30114 139988727314176 68-RobotXSpark10-68_7 submitted to task queue

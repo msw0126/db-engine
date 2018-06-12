@@ -1,0 +1,70 @@
+# 请求参数不存在
+PARAMETER_MISSING_ERROR = "param000"
+# 参数错误
+PARAMETER_VALUE_ERROR = "param001"
+# 集群网络不通或查询错误
+HIVE_QUERY_ERROR = "hive000"
+# 表不存在
+HIVE_TABLE_NOT_EXIST = "hive001"
+# 组件不存在
+COMPONENT_NOT_EXIST = "component000"
+# 组件ID不正确
+COMPONENT_ID_ERROR = "component001"
+# py4j服务异常
+PY4J_CONNECTION_ERROR = "py4j000"
+# csv文件列数量太少，注意第一行为列名
+CSV_COLUMN_SIZE_ERROR = "csv000"
+# csv文件为空
+CSV_EMPTY = "csv001"
+# 列数量不一致
+CSV_COLUMN_NUM_ERROR = "csv002"
+# 非csv文件或文件编码不是utf-8
+CSV_UTF8_ERROR = "csv003"
+# csv数据量小于20
+CSV_ROW_TOO_SMALL = "csv004"
+#csv文件相同文件名称已存在
+CSV_NAME_REPEAT = "csv005"
+#csv文件未上传
+CSV_NOT_UPLOAD = "csv006"
+#csv文件导入失败，请检查重试
+CSV_INTO_ERROR = "csv007"
+# 所选RobotxSpark组件未配置
+ROBOTX_NOT_CONFIGURED = "feature000"
+# 关联字段不在RobotxSpark组件的容器表中
+FIELD_NOT_FOUND_IN_ROBOTX = "feature001"
+# 关联字段不在SelfDefinedFeature组件中
+FIELD_NOT_FOUND_IN_SELF_DEFINED = "feature002"
+# 不存在该算法或不支持
+ALGORITHM_NOT_SUPPORTED = "ALGORITHM_NOT_SUPPORTED"
+# 参数为空
+EMPTY_PARAM = "EMPTY_PARAM"
+# 参数格式错误
+VALUE_ERROR_PARAM = "VALUE_ERROR_PARAM"
+# 算法参数错误
+ALGORITHM_PARAM_ERROR = "ALGORITHM_PARAM_ERROR"
+# Atom Learn没有配置
+ATOM_LEARN_NOT_CONFIGURED = "ATOM_LEARN_NOT_CONFIGURED"
+# Atom Act没有配置
+ATOM_ACT_NOT_CONFIGURED = "ATOM_ACT_NOT_CONFIGURED"
+# 输入数据与ATOMLEARN不同
+INPUT_NOT_SAME_AS_LEARN = "INPUT_NOT_SAME_AS_LEARN"
+# 输入组件类型和ATOMLEARN不同
+COMPONENT_NOT_SAME_AS_LEARN = "COMPONENT_NOT_SAME_AS_LEARN"
+# 没有找到对应的任务
+NO_SUCH_TASK = "NO_SUCH_TASK"
+# 之前提交任务正在运行
+TASK_IS_EXECUTING = "TASK_IS_EXECUTING"
+# RobotX未运行或运行未成功，不能查看结果
+ROBOTX_NOT_SUCCESS = "ROBOTX_NOT_SUCCESS"
+# 特征组合未运行或运行未成功，不能查看结果
+FEATURE_COMBINE_NOT_SUCCESS = "FEATURE_COMBINE_NOT_SUCCESS"
+# 请求资源超过集群上限
+YARN_RESOURCE_EXCEED = "YARN_RESOURCE_EXCEED"
+# 任务无日志或任务未运行完成，无日志产出
+TASK_HAS_NO_LOG = "TASK_HAS_NO_LOG"
+# 没有找到报告，请检查组件是否已成功运行
+NO_REPORT = "NO_REPORT"
+# 没有找到预测结果，请检查组件是否已成功运行
+NO_PREDICTION = "NO_PREDICTION"
+# NOT_INITED 组件未初始化
+NOT_INITED = "NOT_INITED"

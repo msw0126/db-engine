@@ -1,0 +1,32 @@
+{
+  "gen_table" : "user_info",
+  "csv_file"  : "data/user_info.csv",
+  "delimiter" : ",",
+  "field_type" : [
+    {
+      "type": "varchar(20)",
+      "name": "user_id"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "sex"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "job"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "education"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "marriage"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "household"
+    }
+  ],
+  "upload_hdfs_path" : "/tmp/tmp_user_info.csv"
+}

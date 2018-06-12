@@ -1,0 +1,18 @@
+WARNING 2018-01-18 20:09:14,128 base 7792 140000773184248 Not Found: /static/images/favicon.ico
+ERROR 2018-01-19 17:35:41,585 exception 11227 140438465113888 Internal Server Error: /hive/structure
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/hive_reader.py", line 84, in structure
+    field = field_desc.getName()
+AttributeError: 'bytes' object has no attribute 'getName'
+INFO 2018-01-19 18:05:05,815 executor 11227 140438450904256 task[53-FeatureCombine8-53_2] RUNNING KILLED
+INFO 2018-01-19 18:08:06,564 executor 11227 140438465113888 task[50-RobotXSpark3-50_1] RUNNING KILLED
+INFO 2018-01-19 18:08:09,614 executor 11227 140438450904256 task[49-RobotXSpark4-49_1] RUNNING KILLED
+INFO 2018-01-19 18:09:57,763 executor 11227 140438450904408 task[54-RobotXSpark13-54_1] RUNNING KILLED

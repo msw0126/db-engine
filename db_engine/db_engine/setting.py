@@ -1,0 +1,383 @@
+from F_SETTING import WORKING_DIRECTORY, DB_ENGINE, DB_HOST, \
+    DB_NAME, DB_PASSWORD, DB_PORT, DB_USER, HIVE_INPUT_DB, HIVE_OUTPUT_DB
+
+DEFAULT_ALGORITHM = "RF"
+ALGORITHMS = [
+    dict(
+        name="RF",
+        full_name="RandomForest",
+        chinese="随机森林",
+        description="",
+        params=[
+            dict(
+                name="ntrees",
+                chinese="ntrees",
+                description="树的棵数",
+                multiple=True,
+                default="50",
+                type = "int",
+                check = dict(
+                    min = 10,
+                    max = 1000,
+                    max_num = 3
+                )
+            ),
+            dict(
+                name="min_rows",
+                chinese="min_rows",
+                description="树中叶节点所需最少样本数",
+                multiple=True,
+                default="1, 2",
+                type="int",
+                check=dict(
+                    min=1,
+                    max=100,
+                    max_num = 3
+                )
+            ),
+            dict(
+                name="max_depth",
+                chinese="max_depth",
+                multiple=True,
+                description="树的最大深度",
+                default="5, 10",
+                type="int",
+                check=dict(
+                    min=3,
+                    max=15,
+                    max_num = 3
+                )
+            ),
+            dict(
+                name="sample_rate",
+                chinese="sample_rate",
+                multiple=True,
+                description="每棵树所用子样本占总样本的比例",
+                default="0.63",
+                type="double",
+                check=dict(
+                    min=0.1,
+                    max=0.99,
+                    max_num = 2
+                )
+            ),
+            dict(
+                name="col_sample_rate_per_tree",
+                chinese="col_sample_rate_per_tree",
+                multiple=True,
+                description="每棵数特征的抽样比例",
+                default="1",
+                type="double",
+                check=dict(
+                    min=0.1,
+                    max=1,
+                    max_num = 2
+                )
+            )
+        ]
+    ),
+    dict(
+        name="LR",
+        full_name="logistic regression",
+        chinese="逻辑回归",
+        description="",
+        params=[
+            dict(
+                name="alpha",
+                chinese="alpha",
+                multiple=True,
+                description="L1和L2正则化平衡比例，1表示只有L1正则化，0表示只有L2正则化",
+                default="0.5",
+                type="double",
+                check=dict(
+                    min=0,
+                    max= 1,
+                    max_num = 3
+                )
+            ),
+            dict(
+                name="lambda",
+                chinese="lambda",
+                multiple=True,
+                description="正则化幅度",
+                default="1e-4, 1e-5, 1e-7",
+                type="double",
+                check=dict(
+                    min=0,
+                    max=1,
+                    max_num = 3,
+                    decimal = 10
+                )
+            )
+        ]
+    ),
+    dict(
+        name="GBM",
+        full_name="GradientBoostingMachine",
+        chinese="梯度推进机",
+        description="",
+        params=[
+            dict(
+                name="ntrees",
+                chinese="ntrees",
+                multiple=True,
+                description="树的棵数",
+                default="50",
+                type="int",
+                check=dict(
+                    min=10,
+                    max=1000,
+                    max_num=3
+                )
+            ),
+            dict(
+                name="max_depth",
+                chinese="max_depth",
+                multiple=True,
+                description="树的最大深度",
+                default="5",
+                type="int",
+                check=dict(
+                    min=2,
+                    max=30,
+                    max_num = 3
+                )
+            ),
+            dict(
+                name="learn_rate",
+                chinese="learn_rate",
+                multiple=True,
+                description="每次更新权重的幅度",
+                default="0.1",
+                type="double",
+                check=dict(
+                    min=0.001,
+                    max=1,
+                    max_num=3
+                )
+            ),
+            dict(
+                name="min_rows",
+                chinese="min_rows",
+                multiple=True,
+                description="树中叶节点所需要的最少的样本数",
+                default="10",
+                type="int",
+                check=dict(
+                    min=5,
+                    max=None,
+                    max_num = 3
+                )
+            ),
+            dict(
+                name="sample_rate",
+                chinese="sample_rate",
+                multiple=True,
+                description="训练每棵树所用到的子样本占总样本的比例",
+                default="1",
+                type="double",
+                check=dict(
+                    min=0.1,
+                    max=1,
+                    max_num=3
+                )
+            )
+        ]
+    ),
+    dict(
+        name="DL",
+        full_name="DeepLearning",
+        chinese="深度学习",
+        description="",
+        params=[
+            dict(
+                name="hidden",
+                chinese="hidden",
+                multiple=True,
+                description="隐层数及对应每层节点数",
+                default="20,20",
+                type="int",
+                check=dict(
+                    min=1,
+                    max=100,
+                    max_num=5
+                )
+            ),
+            dict(
+                name="input_dropout_ratio",
+                chinese="input_dropout_ratio",
+                multiple=True,
+                description="输入层丢失比例",
+                default="0",
+                type="double",
+                check=dict(
+                    min=0,
+                    max=1,
+                    max_num = 2
+                )
+            ),
+            dict(
+                name="l1",
+                chinese="l1",
+                multiple=True,
+                description="L1正则化",
+                default="0",
+                type="double",
+                check=dict(
+                    min=0,
+                    max=1e-5,
+                    max_num=2,
+                    decimal = 6
+                )
+            ),
+            dict(
+                name="l2",
+                chinese="l2",
+                multiple=True,
+                description="L2正则化",
+                default="0",
+                type="double",
+                check=dict(
+                    min=0,
+                    max=1e-5,
+                    max_num = 2,
+                    decimal = 6
+                )
+            )
+        ]
+    ),
+    dict(
+        name="NB",
+        full_name="NaiveBayes",
+        chinese="朴素贝叶斯",
+        description="",
+        params=[
+            dict(
+                name="laplace",
+                chinese="laplace",
+                multiple=True,
+                description="拉普拉斯平滑参数",
+                default="0",
+                type="int",
+                check=dict(
+                    min=0,
+                    max=None,
+                    max_num=3
+                )
+            ),
+            dict(
+                name="min_sdev",
+                chinese="min_sdev",
+                multiple=True,
+                description="样本不足情况下所使用最小标准差",
+                default="0.001",
+                type="double",
+                check=dict(
+                    min=0,
+                    max=1e-2,
+                    max_num = 2
+                )
+            ),
+            dict(
+                name="eps_sdev",
+                chinese="eps_sdev",
+                multiple=True,
+                description="标准差阈值",
+                default="0",
+                type="double",
+                check=dict(
+                    min=0,
+                    max=1e-2,
+                    max_num=2
+                )
+            )
+        ]
+    )
+]
+COMMON_PARAMS = [
+    dict(
+        name="cal_statics_universal",
+        chinese="是否对全量做统计",
+        multiple=False,
+        default="true",
+        description="",
+        type="boolean"
+    ),
+    dict(
+        name="cal_statics_sampling",
+        chinese="是否做抽样统计",
+        multiple=False,
+        default="false",
+        description="",
+        type="boolean"
+    ),
+    dict(
+        name="max_variable_miss_prop",
+        chinese="特征最大缺失值比例",
+        multiple=False,
+        default=0.9,
+        description="",
+        type="double",
+        check=dict(
+            min=0.7,
+            max=1
+        )
+    ),
+    dict(
+        name="max_sample_miss_prop",
+        chinese="样本最大缺失值比例",
+        multiple=False,
+        default=0.95,
+        description="",
+        type="double",
+        check=dict(
+            min=0.7,
+            max=1
+        )
+    ),
+    dict(
+        name="max_factor_prop",
+        chinese="最大因子数",
+        multiple=False,
+        default=1000,
+        description="",
+        type="int",
+        check=dict(
+            min=0,
+            max=1000
+        )
+    ),
+    dict(
+        name="sampling_method",
+        chinese="是否抽样",
+        multiple=False,
+        default="true",
+        description="",
+        type="boolean",
+        stand_for=["undersampling", "null"]
+    ),
+    dict(
+        name="unbalanced_cutoff",
+        chinese="欠抽样比例",
+        multiple=False,
+        default=5,
+        description="",
+        type="int",
+        check = dict(
+            min = 2,
+            max = None
+        )
+    ),
+    dict(
+        name="cv_k",
+        chinese="k折交叉验证",
+        multiple=False,
+        default=1,
+        description="",
+        type="int",
+        check = dict(
+            min = 1,
+            max = 5
+        )
+    )
+]

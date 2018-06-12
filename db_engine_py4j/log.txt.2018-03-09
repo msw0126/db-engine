@@ -1,0 +1,5 @@
+2018-03-09 14:57:22,048-[TS]INFOThread-125com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 lock the LOCKED map, the clusterName is T
+2018-03-09 14:57:22,064-[TS]INFOThread-125org.apache.hive.jdbc.Utils-Supplied authorities: node1:10000
+2018-03-09 14:57:22,065-[TS]INFOThread-125org.apache.hive.jdbc.Utils-Resolved authority: node1:10000
+2018-03-09 14:57:22,065-[TS]INFOThread-125org.apache.hive.jdbc.HiveConnection-Will try to open client transport with JDBC Uri: jdbc:hive2://node1:10000/default
+2018-03-09 14:57:22,308-[TS]INFOThread-125com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 the pool could not provide a connection, so create it,clusterName is T

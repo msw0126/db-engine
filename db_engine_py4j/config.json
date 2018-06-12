@@ -1,0 +1,28 @@
+{
+  "gen_table" : "test_table",
+  "tmp_table" : "tmp_table",
+  "csv_file"  : "C:\\overdue.csv",
+  "delimiter" : ",",
+  "field_type" : [
+    {
+      "name" : "user_id",
+      "type" : "varchar(20)",
+      "model_type" : "factor"
+    },
+    {
+      "name"  : "target",
+      "type"  : "varchar(20)",
+      "model_type": "factor"
+    }
+  ],
+  "rel_table" : "loan_time",
+  "rel_dict" : "hdfs://ip-172-31-22-94.cn-north-1.compute.internal:8020/taoshu/engine/work_dir/4/RobotXSpark2/dict.csv",
+  "relation" : [
+    {
+      "a" : "user_id",
+      "b" : "user_id"
+    }
+  ],
+  "upload_hdfs_path" : "hdfs://ip-172-31-22-94.cn-north-1.compute.internal:8020/aaa/tmp111.csv",
+  "gen_dict" : "hdfs://ip-172-31-22-94.cn-north-1.compute.internal:8020/aaa/dict.csv"
+}

@@ -1,0 +1,178 @@
+import pyhdfs
+import os
+from deepdiff import DeepDiff
+from setting import WORKING_DIRECTORY
+from F_SETTING import CLUSTER_DIRECTORY
+
+import setting
+from common.UTIL import to_json, mk_working_directory, COMPONENTS
+from db_model.models import Relation, HiveReader, IOFieldType
+from executor.celery_tasks import robotx_spark_execute
+from executor.components.Component import Component
+
+
+class CONFIG:
+    def __init__(self):
+        self.data = dict()
+        self.describe = dict()
+        self.relation = set()
+
+    def add_data(self, table, hive_table):
+        data_describe = DataDescribe(hive_table)
+        self.data[table] = data_describe
+
+    def add_numeric(self, table, field):
+        if table not in self.describe:
+            self.describe[table] = TableDescribe()
+        self.describe[table].add_numeric(field)
+
+    def add_factor(self, table, field):
+        if table not in self.describe:
+            self.describe[table] = TableDescribe()
+        self.describe[table].add_factor(field)
+
+    def add_date(self, table, name, format):
+        if table not in self.describe:
+            self.describe[table] = TableDescribe()
+        self.describe[table].add_date(name, format)
+
+    def add_relation(self, source, target, join, type, interval):
+        relation = Rel(source, target, type, interval)
+        for sc_field, tg_field in join:
+            relation.add_join(sc_field, tg_field)
+        self.relation.add(relation)
+
+
+class Rel:
+    def __init__(self, source, target, type, interval=None):
+        self.source = source
+        self.target = target
+        self.type = type
+        # todo 前段modify
+        if interval is not None and interval != '':
+            self.interval = [int(interval)]
+        self.join = list()
+
+    def add_join(self, sc_field, tg_field):
+        join = Join(sc_field, tg_field)
+        self.join.append(join)
+
+
+class Join:
+    def __init__(self, sc_field, tg_field):
+        self.sc_field = sc_field
+        self.tg_field = tg_field
+
+
+class DataDescribe:
+    def __init__(self, table):
+        self.table = table
+
+
+class TableDescribe:
+    def __init__(self):
+        self.numeric = set()
+        self.date = set()
+        self.factor = set()
+
+    def add_numeric(self, name):
+        self.numeric.add(name)
+
+    def add_factor(self, name):
+        self.factor.add(name)
+
+    def add_date(self, name, format):
+        date = Date(name, format)
+        self.date.add(date)
+
+
+class Date:
+    FORMATS = dict(
+        year="yyyy",
+        month="yyyy-MM",
+        day="yyyy-MM-dd",
+        hour="yyyy-MM-dd hh",
+        minute="yyyy-MM-dd hh:mm",
+        second="yyyy-MM-dd hh:mm:ss"
+    )
+
+    def __init__(self, name, format):
+        self.name = name
+        self.format = Date.FORMATS[format]
+
+
+class RobotXSpark(Component):
+
+    COMPONENT_TYPE = COMPONENTS.ROBOTX_SPARK
+    CONFIG_FILE_NAME = "robotx_config.json"
+    DICT_FILE_NAME = "dict.csv"
+
+    TASK_RELY = robotx_spark_execute
+
+    def __init__(self, project_id, component_id):
+        super().__init__(project_id, component_id)
+        self.config = CONFIG()
+
+    def __load_from_db__(self):
+        relations = Relation.objects.filter(project_id=self.project_id, component_id=self.component_id)
+        if len(relations)==0:
+            raise Exception("%s %s no relation found" %(self.project_id, self.component_id))
+
+        tables = set()
+        for relation in relations:
+            joins = zip(relation.sc_join.split(","), relation.tg_join.split(","))
+            self.config.add_relation(relation.source_table_name, relation.target_table_name, joins, relation.rel_type,
+                                     relation.interval)
+            tables.add(relation.source)
+            tables.add(relation.target)
+
+        input_hive_readers = HiveReader.objects.filter(project_id=self.project_id, component_id__in=tables)
+        if len(input_hive_readers)<len(tables):
+            raise Exception("input hive table may be deleted")
+        hive_reader_id_name_map = dict()
+        for input in input_hive_readers:
+            self.config.add_data(input.logic_name, setting.HIVE_INPUT_DB + "." + input.table_name)
+            hive_reader_id_name_map[input.component_id] = input.logic_name
+
+        fields = IOFieldType.objects.filter(project_id=self.project_id, component_id__in=tables, ignore=False, selected=True)
+        for field in fields:
+            table = hive_reader_id_name_map[field.component_id]
+            field_name = field.field
+            field_type = field.field_type
+            date_format = field.date_format
+            if field_type == 'numeric':
+                self.config.add_numeric(table, field_name)
+            elif field_type == 'factor':
+                self.config.add_factor(table, field_name)
+            else:
+                self.config.add_date(table, field_name, date_format)
+
+    def __eq__(self, other):
+        diff = DeepDiff(self.config, other.config)
+        return len(diff) == 0
+
+    def prepare(self):
+        config_json = to_json(self.config, indent=4)
+        config_path = mk_working_directory(self.project_id, self.component_id, RobotXSpark.CONFIG_FILE_NAME)
+        with open(config_path, 'w', encoding='utf-8') as f:
+            f.write(config_json)
+
+    @property
+    def config_path(self):
+        return mk_working_directory(self.project_id, self.component_id, RobotXSpark.CONFIG_FILE_NAME)
+
+    @property
+    def output(self):
+        output_path = self.output_table(self.project_id, self.component_id)
+        output_dict = self.output_dict(self.project_id, self.component_id)
+        return output_path, output_dict
+
+    @staticmethod
+    def output_table(project_id, component_id):
+        return "%s.rbx_%s_%s" %(setting.HIVE_OUTPUT_DB, project_id, component_id)
+
+    @staticmethod
+    def output_dict(project_id, component_id):
+        return "%s/%s" % (Component.cluster_working_directory(project_id, component_id), RobotXSpark.DICT_FILE_NAME)
+
+

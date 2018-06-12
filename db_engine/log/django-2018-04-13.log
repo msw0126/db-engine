@@ -1,0 +1,223 @@
+ERROR 2018-04-13 13:56:08,675 exception 25312 140588017390552 Internal Server Error: /executor/status
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 916, in connect
+    **kwargs)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/gevent/socket.py", line 99, in create_connection
+    raise err # pylint:disable=raising-bad-type
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/gevent/socket.py", line 86, in create_connection
+    sock.connect(sa)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/gevent/_socket3.py", line 300, in connect
+    raise error(err, strerror(err))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 274, in get_new_connection
+    conn = Database.connect(**conn_params)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/__init__.py", line 90, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 706, in __init__
+    self.connect()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 963, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 111] Connection refused)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/executor.py", line 186, in execution_status
+    if len(execution) == 0:
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 232, in __len__
+    self._fetch_all()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 871, in execute_sql
+    sql, params = self.as_sql()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 436, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 373, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/sql/where.py", line 79, in as_sql
+    sql, params = compiler.compile(child)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 373, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/lookups.py", line 169, in as_sql
+    lhs_sql, params = self.process_lhs(compiler, connection)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/lookups.py", line 162, in process_lhs
+    db_type = self.lhs.output_field.db_type(connection=connection)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/fields/__init__.py", line 644, in db_type
+    return connection.data_types[self.get_internal_type()] % data
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 174, in data_types
+    if self.features.supports_microsecond_precision:
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/mysql/features.py", line 53, in supports_microsecond_precision
+    return self.connection.mysql_version >= (5, 6, 4) and Database.version_info >= (1, 2, 5)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 385, in mysql_version
+    with self.temporary_connection() as cursor:
+  File "/home/taoshu/anaconda3/lib/python3.5/contextlib.py", line 59, in __enter__
+    return next(self.gen)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/base/base.py", line 591, in temporary_connection
+    cursor = self.cursor()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/base/base.py", line 254, in cursor
+    return self._cursor()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/base/base.py", line 229, in _cursor
+    self.ensure_connection()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 274, in get_new_connection
+    conn = Database.connect(**conn_params)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/__init__.py", line 90, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 706, in __init__
+    self.connect()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 963, in connect
+    raise exc
+django.db.utils.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 111] Connection refused)")
+ERROR 2018-04-13 13:56:18,643 exception 25312 140587817752120 Internal Server Error: /executor/status
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 916, in connect
+    **kwargs)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/gevent/socket.py", line 99, in create_connection
+    raise err # pylint:disable=raising-bad-type
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/gevent/socket.py", line 86, in create_connection
+    sock.connect(sa)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/gevent/_socket3.py", line 300, in connect
+    raise error(err, strerror(err))
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 274, in get_new_connection
+    conn = Database.connect(**conn_params)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/__init__.py", line 90, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 706, in __init__
+    self.connect()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 963, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 111] Connection refused)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/executor.py", line 186, in execution_status
+    if len(execution) == 0:
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 232, in __len__
+    self._fetch_all()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 871, in execute_sql
+    sql, params = self.as_sql()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 436, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 373, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/sql/where.py", line 79, in as_sql
+    sql, params = compiler.compile(child)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 373, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/lookups.py", line 169, in as_sql
+    lhs_sql, params = self.process_lhs(compiler, connection)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/lookups.py", line 162, in process_lhs
+    db_type = self.lhs.output_field.db_type(connection=connection)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/fields/__init__.py", line 644, in db_type
+    return connection.data_types[self.get_internal_type()] % data
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 174, in data_types
+    if self.features.supports_microsecond_precision:
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/mysql/features.py", line 53, in supports_microsecond_precision
+    return self.connection.mysql_version >= (5, 6, 4) and Database.version_info >= (1, 2, 5)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/utils/functional.py", line 35, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 385, in mysql_version
+    with self.temporary_connection() as cursor:
+  File "/home/taoshu/anaconda3/lib/python3.5/contextlib.py", line 59, in __enter__
+    return next(self.gen)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/base/base.py", line 591, in temporary_connection
+    cursor = self.cursor()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/base/base.py", line 254, in cursor
+    return self._cursor()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/base/base.py", line 229, in _cursor
+    self.ensure_connection()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/base/base.py", line 213, in ensure_connection
+    self.connect()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/base/base.py", line 189, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 274, in get_new_connection
+    conn = Database.connect(**conn_params)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/__init__.py", line 90, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 706, in __init__
+    self.connect()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 963, in connect
+    raise exc
+django.db.utils.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 111] Connection refused)")
+WARNING 2018-04-16 09:10:25,144 base 12373 140385907993032 Not Found: /static/images/favicon.ico
+ERROR 2018-04-16 09:36:28,321 exception 12373 140385886854944 Internal Server Error: /hive/structure
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/hive_reader.py", line 84, in structure
+    field = field_desc.getName()
+AttributeError: 'bytes' object has no attribute 'getName'
+INFO 2018-04-16 10:33:08,359 executor 12373 140385886854944 task[96-AtomLearn2-96_6] RUNNING KILLED
+INFO 2018-04-16 10:37:11,468 executor 12373 140385886854032 task[96-AtomLearn2-96_7] RUNNING KILLED
+INFO 2018-04-16 10:40:05,722 executor 12373 140385886854032 task[96-AtomLearn2-96_8] RUNNING KILLED

@@ -1,0 +1,201 @@
+ERROR 2018-04-17 09:22:41,644 exception 29217 139949824587472 Internal Server Error: /executor/stop_all
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/executor.py", line 278, in stop_all
+    if execution[0].status != ExecutionStatus.RUNNING:
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+ERROR 2018-04-17 09:22:45,680 exception 29217 139949824587168 Internal Server Error: /executor/stop_all
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/executor.py", line 278, in stop_all
+    if execution[0].status != ExecutionStatus.RUNNING:
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+ERROR 2018-04-17 09:22:46,322 exception 29217 139949824587168 Internal Server Error: /executor/stop_all
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/executor.py", line 278, in stop_all
+    if execution[0].status != ExecutionStatus.RUNNING:
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+ERROR 2018-04-17 09:22:46,553 exception 29217 139949824587168 Internal Server Error: /executor/stop_all
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/executor.py", line 278, in stop_all
+    if execution[0].status != ExecutionStatus.RUNNING:
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+ERROR 2018-04-17 09:22:46,793 exception 29217 139949824587168 Internal Server Error: /executor/stop_all
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/executor.py", line 278, in stop_all
+    if execution[0].status != ExecutionStatus.RUNNING:
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+ERROR 2018-04-17 09:22:57,879 exception 29217 139949806996368 Internal Server Error: /executor/stop_all
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/executor.py", line 278, in stop_all
+    if execution[0].status != ExecutionStatus.RUNNING:
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+ERROR 2018-04-17 09:22:58,579 exception 29217 139949806996368 Internal Server Error: /executor/stop_all
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/executor.py", line 278, in stop_all
+    if execution[0].status != ExecutionStatus.RUNNING:
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+ERROR 2018-04-17 09:22:58,778 exception 29217 139949806996368 Internal Server Error: /executor/stop_all
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/executor.py", line 278, in stop_all
+    if execution[0].status != ExecutionStatus.RUNNING:
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+ERROR 2018-04-17 09:22:58,952 exception 29217 139949806996368 Internal Server Error: /executor/stop_all
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/executor.py", line 278, in stop_all
+    if execution[0].status != ExecutionStatus.RUNNING:
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+ERROR 2018-04-17 09:24:24,378 exception 29217 139949806996520 Internal Server Error: /executor/stop_all
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/executor.py", line 278, in stop_all
+    if execution[0].status != ExecutionStatus.RUNNING:
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+ERROR 2018-04-17 09:24:25,650 exception 29217 139949806996520 Internal Server Error: /executor/stop_all
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/executor.py", line 278, in stop_all
+    if execution[0].status != ExecutionStatus.RUNNING:
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+ERROR 2018-04-17 09:24:26,137 exception 29217 139949806996520 Internal Server Error: /executor/stop_all
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/executor.py", line 278, in stop_all
+    if execution[0].status != ExecutionStatus.RUNNING:
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 289, in __getitem__
+    return list(qs)[0]
+IndexError: list index out of range
+ERROR 2018-04-17 10:11:54,598 exception 29217 139949824587168 Internal Server Error: /mydata/list_table
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 367, in list_table
+    check_hive_mysql(sum_data)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 167, in check_hive_mysql
+    search_from_hive_table_list = py4j_common_hive_util('listTable')
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 144, in py4j_common_hive_util
+    result = func(*param)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/java_gateway.py", line 1160, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/protocol.py", line 328, in get_return_value
+    format(target_id, ".", name))
+py4j.protocol.Py4JError: An error occurred while calling o10.listTable

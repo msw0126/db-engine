@@ -1,0 +1,96 @@
+{
+  "gen_table" : "german_credit",
+  "csv_file"  : "data/german_credit.csv",
+  "delimiter" : ",",
+  "field_type" : [
+    {
+      "type": "varchar(20)",
+      "name": "id"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "V1"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "V2"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "V3"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "V4"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "V5"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "V6"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "V7"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "V8"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "V9"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "V10"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "V11"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "V12"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "V13"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "V14"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "V15"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "V16"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "V17"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "V18"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "V19"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "V20"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "V21"
+    }
+  ],
+  "upload_hdfs_path" : "/tmp/tmp_german_credit.csv"
+}

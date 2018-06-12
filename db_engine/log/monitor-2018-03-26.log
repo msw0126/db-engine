@@ -1,0 +1,18 @@
+INFO 2018-03-26 10:05:47,014 monitor 13089 140706849236736 Press Ctrl+C to exit
+INFO 2018-03-26 10:09:32,248 TaskDetect 13089 140706339350272 90-RobotXSpark2-90_0 submitted to task queue
+INFO 2018-03-26 10:12:47,143 TaskDetect 13089 140706307880704 90-RobotXSpark2-90_1 submitted to task queue
+INFO 2018-03-26 10:23:57,150 TaskDetect 13089 140705880078080 91-RobotXSpark2-91_0 submitted to task queue
+INFO 2018-03-26 10:49:17,191 TaskDetect 13089 140706349840128 91-RobotXSpark2-91_1 submitted to task queue
+INFO 2018-03-26 10:49:32,136 TaskDetect 13089 140706339350272 91-RobotXSpark2-91_2 submitted to task queue
+INFO 2018-03-26 11:11:27,153 TaskDetect 13089 140705880078080 91-RobotXSpark2-91_3 submitted to task queue
+INFO 2018-03-26 11:17:02,147 TaskDetect 13089 140706339350272 91-RobotXSpark2-91_4 submitted to task queue
+INFO 2018-03-26 15:08:37,143 TaskDetect 13089 140706307880704 91-RobotXSpark2-91_5 submitted to task queue
+INFO 2018-03-26 16:37:57,192 TaskDetect 13089 140706297390848 92-RobotXSpark2-92_0 submitted to task queue
+INFO 2018-03-26 16:44:32,147 TaskDetect 13089 140706339350272 92-FeatureCombine4-92_1 submitted to task queue
+INFO 2018-03-26 16:47:27,232 TaskDetect 13089 140705869588224 92-AtomLearn5-92_2 submitted to task queue
+INFO 2018-03-26 16:50:32,250 TaskDetect 13089 140706427975424 92-AtomAct6-92_2 submitted to task queue
+INFO 2018-03-26 16:52:47,176 TaskDetect 13089 140706307880704 92-AtomTest7-92_2 submitted to task queue
+INFO 2018-03-27 10:55:17,145 TaskDetect 13089 140706307880704 92-RobotXSpark2-92_3 submitted to task queue
+INFO 2018-03-27 10:58:02,196 TaskDetect 13089 140706427975424 92-FeatureCombine4-92_4 submitted to task queue
+INFO 2018-03-27 17:27:42,263 TaskDetect 13089 140706440681216 92-RobotXSpark2-92_5 submitted to task queue
+INFO 2018-03-28 09:23:17,132 TaskDetect 13089 140705869588224 92-RobotXSpark2-92_6 submitted to task queue

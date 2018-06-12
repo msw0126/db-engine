@@ -1,0 +1,20 @@
+INFO 2018-01-24 23:26:15,019 monitor 23571 140669539567360 Press Ctrl+C to exit
+INFO 2018-01-24 23:32:40,230 TaskDetect 23571 140669145835264 60-RobotXSpark5-60_2 submitted to task queue
+INFO 2018-01-24 23:36:45,152 TaskDetect 23571 140668861134592 60-FeatureCombine7-60_2 submitted to task queue
+INFO 2018-01-24 23:40:30,191 TaskDetect 23571 140669122639616 60-AtomLearn8-60_2 submitted to task queue
+INFO 2018-01-24 23:45:55,240 TaskDetect 23571 140668861134592 60-AtomAct10-60_2 submitted to task queue
+INFO 2018-01-24 23:55:45,644 monitor 24641 140680234133248 Press Ctrl+C to exit
+INFO 2018-01-24 23:55:55,946 TaskDetect 24641 140679840401152 60-RobotXSpark5-60_3 submitted to task queue
+INFO 2018-01-24 23:58:45,883 TaskDetect 24641 140679428695808 60-FeatureCombine7-60_3 submitted to task queue
+INFO 2018-01-25 00:01:10,881 TaskDetect 24641 140679806715648 60-AtomLearn8-60_3 submitted to task queue
+INFO 2018-01-25 00:04:05,941 TaskDetect 24641 140679407716096 60-AtomAct10-60_3 submitted to task queue
+INFO 2018-01-25 00:12:55,869 TaskDetect 24641 140679428695808 60-AtomAct10-60_4 submitted to task queue
+INFO 2018-01-25 00:18:20,867 TaskDetect 24641 140679827695360 60-AtomAct10-60_5 submitted to task queue
+INFO 2018-01-25 00:23:55,877 TaskDetect 24641 140679418205952 60-RobotXSpark5-60_6 submitted to task queue
+INFO 2018-01-25 00:27:00,882 TaskDetect 24641 140679806715648 60-FeatureCombine7-60_6 submitted to task queue
+INFO 2018-01-25 00:29:30,871 TaskDetect 24641 140679806715648 60-AtomLearn8-60_6 submitted to task queue
+INFO 2018-01-25 00:32:05,906 TaskDetect 24641 140679428695808 60-AtomAct10-60_6 submitted to task queue
+INFO 2018-01-25 00:36:55,965 TaskDetect 24641 140679439185664 60-RobotXSpark5-60_7 submitted to task queue
+INFO 2018-01-25 00:39:10,903 TaskDetect 24641 140679827695360 60-FeatureCombine7-60_7 submitted to task queue
+INFO 2018-01-25 00:41:25,875 TaskDetect 24641 140679418205952 60-AtomLearn8-60_7 submitted to task queue
+INFO 2018-01-25 00:44:10,875 TaskDetect 24641 140679827695360 60-AtomAct13-60_7 submitted to task queue

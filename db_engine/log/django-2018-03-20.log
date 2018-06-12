@@ -1,0 +1,190 @@
+ERROR 2018-03-20 16:44:19,087 exception 8804 139985665878776 Internal Server Error: /mydata/list_table
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 101, in execute
+    return self.cursor.execute(query, args)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 856, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 1057, in _read_query_result
+    result.read()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 1340, in read
+    first_packet = self.connection._read_packet()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 1014, in _read_packet
+    packet.check_error()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 393, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'engine.db_model_mydata' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 346, in list_table
+    check_hive_mysql(sum_data)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 171, in check_hive_mysql
+    for row_obj in mysql_table_sum:
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 250, in __iter__
+    self._fetch_all()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 894, in execute_sql
+    raise original_exception
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 884, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 101, in execute
+    return self.cursor.execute(query, args)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 856, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 1057, in _read_query_result
+    result.read()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 1340, in read
+    first_packet = self.connection._read_packet()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 1014, in _read_packet
+    packet.check_error()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 393, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'engine.db_model_mydata' doesn't exist")
+ERROR 2018-03-20 16:44:27,473 exception 8804 139985626506960 Internal Server Error: /mydata/list_table
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 101, in execute
+    return self.cursor.execute(query, args)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 856, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 1057, in _read_query_result
+    result.read()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 1340, in read
+    first_packet = self.connection._read_packet()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 1014, in _read_packet
+    packet.check_error()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 393, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'engine.db_model_mydata' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 346, in list_table
+    check_hive_mysql(sum_data)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 171, in check_hive_mysql
+    for row_obj in mysql_table_sum:
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 250, in __iter__
+    self._fetch_all()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 1118, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/query.py", line 53, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 894, in execute_sql
+    raise original_exception
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/models/sql/compiler.py", line 884, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/db/backends/mysql/base.py", line 101, in execute
+    return self.cursor.execute(query, args)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 856, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 1057, in _read_query_result
+    result.read()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 1340, in read
+    first_packet = self.connection._read_packet()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 1014, in _read_packet
+    packet.check_error()
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/connections.py", line 393, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'engine.db_model_mydata' doesn't exist")
+DEBUG 2018-03-20 16:49:37,127 schema 9607 139843774392064 CREATE TABLE `django_migrations` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `app` varchar(255) NOT NULL, `name` varchar(255) NOT NULL, `applied` datetime(6) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:43,340 schema 9611 140305948313344 CREATE TABLE `db_model_atomact` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `atom_learn_id` varchar(100) NOT NULL, `input_comp_id` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:43,600 schema 9611 140305948313344 CREATE TABLE `db_model_atomlearn` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `input_comp_id` varchar(100) NOT NULL, `feature_id` varchar(100) NOT NULL, `feature_target` varchar(100) NOT NULL, `algorithm` varchar(30) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:43,842 schema 9611 140305948313344 CREATE TABLE `db_model_atomlearnparam` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `param_name` varchar(30) NOT NULL, `param_value` varchar(1000) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:44,099 schema 9611 140305948313344 CREATE TABLE `db_model_atomtest` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `atom_act_id` varchar(100) NOT NULL, `input_comp_id` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:44,317 schema 9611 140305948313344 CREATE TABLE `db_model_compidgenerator` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` integer NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:44,525 schema 9611 140305948313344 CREATE TABLE `db_model_container` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `container_id` varchar(100) NOT NULL, `table_name` varchar(50) NOT NULL, `key_fields` varchar(200) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:44,795 schema 9611 140305948313344 CREATE TABLE `db_model_currentexecution` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `current_execution` varchar(20) NULL); (params None)
+DEBUG 2018-03-20 16:49:45,042 schema 9611 140305948313344 CREATE TABLE `db_model_execution` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `task_id` varchar(20) NOT NULL, `project_id` varchar(10) NOT NULL, `start_time` datetime(6) NULL, `end_time` datetime(6) NULL, `status` varchar(20) NOT NULL, `task_count` integer NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:45,289 schema 9611 140305948313344 CREATE TABLE `db_model_exportmodel` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `atom_learn_id` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:45,513 schema 9611 140305948313344 CREATE TABLE `db_model_featurecombine` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `robotx_spark_id` varchar(100) NOT NULL, `self_defined_feature_id` varchar(100) NOT NULL, `robotx_table_name` varchar(50) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:45,801 schema 9611 140305948313344 CREATE TABLE `db_model_featurecombinerelation` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `robotx_field` varchar(100) NOT NULL, `self_defined_field` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:46,015 schema 9611 140305948313344 CREATE TABLE `db_model_hivereader` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `table_name` varchar(100) NOT NULL, `logic_name` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:46,234 schema 9611 140305948313344 CREATE TABLE `db_model_iofieldtype` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `field` varchar(100) NOT NULL, `field_type` varchar(10) NOT NULL, `database_type` varchar(50) NOT NULL, `date_format` varchar(20) NULL, `date_size` varchar(20) NULL, `ignore` bool NOT NULL, `selected` bool NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:46,438 schema 9611 140305948313344 CREATE TABLE `db_model_modelbestparams` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `name` varchar(100) NOT NULL, `value` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:46,685 schema 9611 140305948313344 CREATE TABLE `db_model_modelcoefficient` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `name` varchar(100) NOT NULL, `coefficient` varchar(100) NOT NULL, `standardized_coefficient` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:46,911 schema 9611 140305948313344 CREATE TABLE `db_model_modelconfusionmatrix` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `threshold` varchar(100) NOT NULL, `value_type` varchar(100) NOT NULL, `value` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:47,121 schema 9611 140305948313344 CREATE TABLE `db_model_modeldescription` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `algorithm` varchar(50) NOT NULL, `target` varchar(200) NOT NULL, `tuning_metric` varchar(20) NOT NULL, `n_folds` integer NULL, `train_percent` integer NULL, `validation_percent` integer NULL); (params None)
+DEBUG 2018-03-20 16:49:47,350 schema 9611 140305948313344 CREATE TABLE `db_model_modelgainliftsummary` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `group` integer NOT NULL, `cumulative_data_fraction` varchar(100) NOT NULL, `node1lower_threshold` varchar(100) NOT NULL, `node1lift` varchar(100) NOT NULL, `node1cumulative_lift` varchar(100) NOT NULL, `node1response_rate` varchar(100) NOT NULL, `node1cumulative_response_rate` varchar(100) NOT NULL, `node1capture_rate` varchar(100) NOT NULL, `node1cumulative_capture_ratenode1` varchar(100) NOT NULL, `node1gain` varchar(100) NOT NULL, `node1cumulative_gain` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:47,593 schema 9611 140305948313344 CREATE TABLE `db_model_modelkfoldssummary` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `metric` varchar(100) NOT NULL, `value_type` varchar(20) NOT NULL, `value` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:47,815 schema 9611 140305948313344 CREATE TABLE `db_model_modelmaxcriteria` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `metric` varchar(100) NOT NULL, `threshold` varchar(100) NOT NULL, `value` varchar(100) NOT NULL, `idx` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:48,116 schema 9611 140305948313344 CREATE TABLE `db_model_modelpredictionbins` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `bin` varchar(100) NOT NULL, `value` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:48,379 schema 9611 140305948313344 CREATE TABLE `db_model_modelscoregroupthreshold` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `threshold` varchar(100) NOT NULL, `score_bins` varchar(100) NOT NULL, `tps` varchar(100) NOT NULL, `fps` varchar(100) NOT NULL, `tns` varchar(100) NOT NULL, `fns` varchar(100) NOT NULL, `recall` varchar(100) NOT NULL, `precision` varchar(100) NOT NULL, `accuracy` varchar(100) NOT NULL, `specificity` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:48,641 schema 9611 140305948313344 CREATE TABLE `db_model_modelsummary` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `layer` integer NOT NULL, `name` varchar(100) NOT NULL, `value` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:48,860 schema 9611 140305948313344 CREATE TABLE `db_model_modelsyntheticmetrics` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `name` varchar(100) NOT NULL, `value` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:49,110 schema 9611 140305948313344 CREATE TABLE `db_model_modelthresholdsmetric` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `threshold` varchar(100) NOT NULL, `metric` varchar(100) NOT NULL, `value` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:49,346 schema 9611 140305948313344 CREATE TABLE `db_model_modeltopnmetriclist` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `score_topN` varchar(100) NOT NULL, `tps` varchar(100) NOT NULL, `fps` varchar(100) NOT NULL, `tns` varchar(100) NOT NULL, `fns` varchar(100) NOT NULL, `recall` varchar(100) NOT NULL, `precision` varchar(100) NOT NULL, `accuracy` varchar(100) NOT NULL, `specificity` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:49,669 schema 9611 140305948313344 CREATE TABLE `db_model_modelvariableimportance` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `variable` varchar(100) NOT NULL, `relative_importance` varchar(100) NOT NULL, `scaled_importance` varchar(100) NOT NULL, `percentage` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:49,922 schema 9611 140305948313344 CREATE TABLE `db_model_mydata` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `file_name` varchar(100) NOT NULL, `field_num` integer NULL, `file_size` varchar(50) NULL, `creat_time` varchar(50) NULL, `creat_user` varchar(50) NULL); (params None)
+DEBUG 2018-03-20 16:49:50,198 schema 9611 140305948313344 CREATE TABLE `db_model_mydatacsvinfo` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `file_name` varchar(100) NOT NULL, `csv_file_name` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:50,439 schema 9611 140305948313344 CREATE TABLE `db_model_mydatatype` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `file_name` varchar(100) NOT NULL, `field` varchar(100) NOT NULL, `field_type` varchar(10) NOT NULL, `ori_type` varchar(10) NOT NULL, `date_format` varchar(10) NULL, `date_size` varchar(10) NULL, `sample_data` varchar(1000) NOT NULL, `selected` bool NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:50,719 schema 9611 140305948313344 CREATE TABLE `db_model_relation` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `source` varchar(20) NOT NULL, `source_table_name` varchar(50) NOT NULL, `target` varchar(20) NOT NULL, `target_table_name` varchar(50) NOT NULL, `rel_type` varchar(8) NOT NULL, `sc_join` varchar(200) NOT NULL, `tg_join` varchar(200) NOT NULL, `interval` varchar(100) NULL); (params None)
+DEBUG 2018-03-20 16:49:50,938 schema 9611 140305948313344 CREATE TABLE `db_model_selfdefinedfeature` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `file_name` varchar(50) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:51,160 schema 9611 140305948313344 CREATE TABLE `db_model_selfdefinedfeaturetype` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `field` varchar(100) NOT NULL, `field_type` varchar(10) NOT NULL, `ori_type` varchar(10) NOT NULL, `date_format` varchar(10) NULL, `date_size` varchar(10) NULL, `sample_data` varchar(1000) NOT NULL, `selected` bool NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:51,374 schema 9611 140305948313344 CREATE TABLE `db_model_task` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `task_id` varchar(20) NOT NULL, `component_id` varchar(100) NOT NULL, `component_type` varchar(20) NOT NULL, `error_code` varchar(30) NULL, `application_id` varchar(50) NULL, `tracking_url` varchar(200) NULL, `detail` varchar(10000) NULL, `has_log` bool NOT NULL, `task_status` varchar(20) NOT NULL, `relies` integer NOT NULL, `submit_time` datetime(6) NULL, `record_time` datetime(6) NULL, `start_time` datetime(6) NULL, `end_time` datetime(6) NULL, `celery_id` varchar(100) NULL); (params None)
+DEBUG 2018-03-20 16:49:51,603 schema 9611 140305948313344 CREATE TABLE `db_model_taskidgenerator` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `task_id` integer NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:51,802 schema 9611 140305948313344 CREATE TABLE `db_model_taskrelies` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `sc_comp_id` varchar(100) NOT NULL, `tg_comp_id` varchar(100) NOT NULL); (params None)
+DEBUG 2018-03-20 16:49:52,062 schema 9611 140305948313344 CREATE TABLE `db_model_yarnresource` (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY, `project_id` varchar(10) NOT NULL, `component_id` varchar(100) NOT NULL, `driver_memory` integer NOT NULL, `num_executors` integer NOT NULL, `executor_memory` integer NOT NULL, `executor_cores` integer NOT NULL, `driver_perm` integer NOT NULL, `executor_perm` integer NOT NULL); (params None)

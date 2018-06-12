@@ -1,0 +1,24 @@
+{
+  "gen_table" : "browse_history",
+  "csv_file"  : "data/browse_history.csv",
+  "delimiter" : ",",
+  "field_type" : [
+    {
+      "type": "varchar(20)",
+      "name": "user_id"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "date"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "action_type"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "sub_action_type"
+    }
+  ],
+  "upload_hdfs_path" : "/tmp/tmp_browse_history.csv"
+}

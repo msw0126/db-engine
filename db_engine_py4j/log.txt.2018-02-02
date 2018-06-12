@@ -1,0 +1,53 @@
+2018-02-02 11:26:10,744-[TS]INFOmaincom.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 lock the LOCKED map, the clusterName is T
+2018-02-02 11:26:10,761-[TS]INFOmainorg.apache.hive.jdbc.Utils-Supplied authorities: node1:10000
+2018-02-02 11:26:10,762-[TS]INFOmainorg.apache.hive.jdbc.Utils-Resolved authority: node1:10000
+2018-02-02 11:26:10,777-[TS]INFOmainorg.apache.hive.jdbc.HiveConnection-Will try to open client transport with JDBC Uri: jdbc:hive2://node1:10000/default
+2018-02-02 11:26:10,893-[TS]INFOmaincom.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 the pool could not provide a connection, so create it,clusterName is T
+2018-02-02 11:26:10,893-[TS]INFOmaincom.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 the clusterName in pool is null, create a new Map in LOCKED, clusterName is T
+2018-02-02 11:36:36,941-[TS]INFOmaincom.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 lock the LOCKED map, the clusterName is T
+2018-02-02 11:36:36,974-[TS]INFOmainorg.apache.hive.jdbc.Utils-Supplied authorities: node1:10000
+2018-02-02 11:36:36,982-[TS]INFOmainorg.apache.hive.jdbc.Utils-Resolved authority: node1:10000
+2018-02-02 11:36:37,023-[TS]INFOmainorg.apache.hive.jdbc.HiveConnection-Will try to open client transport with JDBC Uri: jdbc:hive2://node1:10000/default
+2018-02-02 11:36:37,193-[TS]INFOmaincom.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 the pool could not provide a connection, so create it,clusterName is T
+2018-02-02 11:36:37,194-[TS]INFOmaincom.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 the clusterName in pool is null, create a new Map in LOCKED, clusterName is T
+2018-02-02 11:43:26,413-[TS]INFOThread-2org.apache.hadoop.conf.Configuration.deprecation-fs.default.name is deprecated. Instead, use fs.defaultFS
+2018-02-02 11:43:26,598-[TS]WARNThread-2org.apache.hadoop.util.NativeCodeLoader-Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2018-02-02 11:43:27,254-[TS]INFOThread-2com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 lock the LOCKED map, the clusterName is T
+2018-02-02 11:43:27,289-[TS]INFOThread-2com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 the pool could not provide a connection, so create it,clusterName is T
+2018-02-02 11:43:33,052-[TS]INFOThread-7com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 lock the LOCKED map, the clusterName is T
+2018-02-02 11:43:33,053-[TS]INFOThread-7org.apache.hive.jdbc.Utils-Supplied authorities: node1:10000
+2018-02-02 11:43:33,053-[TS]INFOThread-7org.apache.hive.jdbc.Utils-Resolved authority: node1:10000
+2018-02-02 11:43:33,054-[TS]INFOThread-7org.apache.hive.jdbc.HiveConnection-Will try to open client transport with JDBC Uri: jdbc:hive2://node1:10000/default
+2018-02-02 11:43:33,148-[TS]INFOThread-7com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 the pool could not provide a connection, so create it,clusterName is T
+2018-02-02 11:43:41,534-[TS]INFOThread-10com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 lock the LOCKED map, the clusterName is T
+2018-02-02 11:43:41,550-[TS]INFOThread-10com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 get the connection from poll and the clusterName is T
+2018-02-02 11:44:02,270-[TS]INFOThread-12com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 lock the LOCKED map, the clusterName is T
+2018-02-02 11:44:02,306-[TS]INFOThread-12com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 get the connection from poll and the clusterName is T
+2018-02-02 11:44:02,363-[TS]INFOThread-13com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 lock the LOCKED map, the clusterName is T
+2018-02-02 11:44:02,384-[TS]INFOThread-13com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 get the connection from poll and the clusterName is T
+2018-02-02 11:44:15,283-[TS]INFOThread-16com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 lock the LOCKED map, the clusterName is T
+2018-02-02 11:44:15,300-[TS]INFOThread-16com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 get the connection from poll and the clusterName is T
+2018-02-02 11:44:37,756-[TS]INFOThread-17com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 lock the LOCKED map, the clusterName is T
+2018-02-02 11:44:37,772-[TS]INFOThread-17com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 get the connection from poll and the clusterName is T
+2018-02-02 11:44:39,092-[TS]INFOThread-19com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 lock the LOCKED map, the clusterName is T
+2018-02-02 11:44:39,109-[TS]INFOThread-19com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 get the connection from poll and the clusterName is T
+2018-02-02 11:44:39,153-[TS]INFOThread-20com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 lock the LOCKED map, the clusterName is T
+2018-02-02 11:44:39,167-[TS]INFOThread-20com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 get the connection from poll and the clusterName is T
+2018-02-02 11:44:48,027-[TS]INFOThread-24com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 lock the LOCKED map, the clusterName is T
+2018-02-02 11:44:48,055-[TS]INFOThread-24com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 get the connection from poll and the clusterName is T
+2018-02-02 11:45:09,215-[TS]INFOThread-26com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 lock the LOCKED map, the clusterName is T
+2018-02-02 11:45:09,231-[TS]INFOThread-26com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 get the connection from poll and the clusterName is T
+2018-02-02 11:45:11,324-[TS]INFOThread-28com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 lock the LOCKED map, the clusterName is T
+2018-02-02 11:45:11,337-[TS]INFOThread-28com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 get the connection from poll and the clusterName is T
+2018-02-02 11:45:11,392-[TS]INFOThread-29com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 lock the LOCKED map, the clusterName is T
+2018-02-02 11:45:11,403-[TS]INFOThread-29com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 get the connection from poll and the clusterName is T
+2018-02-02 11:45:17,946-[TS]INFOThread-31com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 lock the LOCKED map, the clusterName is T
+2018-02-02 11:45:17,957-[TS]INFOThread-31com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 get the connection from poll and the clusterName is T
+2018-02-02 11:52:58,742-[TS]INFOThread-34org.apache.hadoop.conf.Configuration.deprecation-fs.default.name is deprecated. Instead, use fs.defaultFS
+2018-02-02 11:52:58,852-[TS]INFOThread-34com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 lock the LOCKED map, the clusterName is T
+2018-02-02 11:52:58,864-[TS]INFOThread-34com.taodatarobot.engine.py4j.hive.ObjectPool-【POOL】 get the connection from poll and the clusterName is T
+2018-02-02 12:25:38,944-[TS]INFOThread-37org.apache.hadoop.conf.Configuration.deprecation-fs.default.name is deprecated. Instead, use fs.defaultFS
+2018-02-02 12:25:39,389-[TS]INFOThread-37org.apache.hadoop.conf.Configuration.deprecation-fs.default.name is deprecated. Instead, use fs.defaultFS
+2018-02-02 12:29:32,317-[TS]INFOThread-42org.apache.hadoop.conf.Configuration.deprecation-fs.default.name is deprecated. Instead, use fs.defaultFS
+2018-02-02 12:29:32,438-[TS]INFOThread-42org.apache.hadoop.conf.Configuration.deprecation-fs.default.name is deprecated. Instead, use fs.defaultFS
+2018-02-02 12:33:13,720-[TS]INFOThread-46org.apache.hadoop.conf.Configuration.deprecation-fs.default.name is deprecated. Instead, use fs.defaultFS

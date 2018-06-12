@@ -1,0 +1,21 @@
+{
+  "gen_table" : "overdue",
+  "csv_file"  : "data/overdue.csv",
+  "delimiter" : ",",
+  "field_type" : [
+    {
+      "name" : "user_id",
+      "type" : "varchar(20)"
+    },
+    {
+      "name"  : "target",
+      "type"  : "varchar(20)"
+    },
+    ,
+    {
+      "name"  : "date",
+      "type"  : "varchar(20)"
+    }
+  ],
+  "upload_hdfs_path" : "/tmp/tmp_overdue.csv"
+}

@@ -1,0 +1,21 @@
+INFO 2018-03-07 13:20:53,337 monitor 24511 140250786907904 Press Ctrl+C to exit
+INFO 2018-03-07 13:21:53,625 TaskDetect 24511 140250246530816 70-FeatureCombine7-70_4 submitted to task queue
+INFO 2018-03-07 13:23:53,745 monitor 24737 140282285774592 Press Ctrl+C to exit
+INFO 2018-03-07 13:26:23,876 TaskDetect 24737 140281441662720 70-RobotXSpark5-70_5 submitted to task queue
+INFO 2018-03-07 13:30:23,828 TaskDetect 24737 140281864775424 70-FeatureCombine7-70_5 submitted to task queue
+INFO 2018-03-07 13:34:08,869 TaskDetect 24737 140281877481216 70-AtomLearn8-70_5 submitted to task queue
+INFO 2018-03-07 14:01:53,903 TaskDetect 24737 140281462642432 70-RobotXSpark5-70_6 submitted to task queue
+INFO 2018-03-07 14:06:08,828 TaskDetect 24737 140281452152576 70-FeatureCombine7-70_7 submitted to task queue
+INFO 2018-03-07 14:14:48,924 TaskDetect 24737 140281483622144 70-AtomLearn8-70_8 submitted to task queue
+INFO 2018-03-07 14:25:18,830 TaskDetect 24737 140281452152576 70-AtomAct9-70_9 submitted to task queue
+INFO 2018-03-07 14:30:33,823 TaskDetect 24737 140281441662720 70-AtomTest10-70_10 submitted to task queue
+INFO 2018-03-08 11:37:23,839 TaskDetect 24737 140281854285568 70-RobotXSpark5-70_11 submitted to task queue
+INFO 2018-03-09 14:40:43,821 TaskDetect 24737 140281854285568 70-RobotXSpark5-70_12 submitted to task queue
+INFO 2018-03-09 14:52:38,932 TaskDetect 24737 140281843795712 70-RobotXSpark5-70_13 submitted to task queue
+INFO 2018-03-12 10:37:53,866 TaskDetect 24737 140281864775424 70-AtomLearn8-70_14 submitted to task queue
+INFO 2018-03-12 14:21:23,827 TaskDetect 24737 140281441662720 69-RobotXSpark2-69_1 submitted to task queue
+INFO 2018-03-12 14:23:03,821 TaskDetect 24737 140281441662720 69-RobotXSpark2-69_2 submitted to task queue
+INFO 2018-03-12 14:40:33,848 TaskDetect 24737 140281441662720 69-RobotXSpark2-69_3 submitted to task queue
+INFO 2018-03-12 14:43:03,830 TaskDetect 24737 140281441662720 72-RobotXSpark2-72_0 submitted to task queue
+INFO 2018-03-12 16:23:28,868 TaskDetect 24737 140281843795712 72-AtomLearn3-72_1 submitted to task queue
+INFO 2018-03-14 13:11:08,827 TaskDetect 24737 140281452152576 66-AtomLearn1-66_5 submitted to task queue

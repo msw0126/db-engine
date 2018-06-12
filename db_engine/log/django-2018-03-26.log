@@ -1,0 +1,836 @@
+ERROR 2018-03-26 15:37:05,563 exception 19368 140475499107288 Internal Server Error: /mydata/csv_into_hive
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 340, in csv_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 337, in csv_into_hive
+    load_into_hive(hive_filename, new_csv_saving_path, hdfs_path, hdfs_path_dir, field_list)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 113, in load_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 111, in load_into_hive
+    func(table_name, csv_path, hdfs_path, hdfs_path_dir, ff)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/java_gateway.py", line 1160, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/protocol.py", line 320, in get_return_value
+    format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling o41.uploadToHive.
+: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/bank_detail_external->action=*;
+	at org.apache.hive.jdbc.Utils.verifySuccess(Utils.java:231)
+	at org.apache.hive.jdbc.Utils.verifySuccessWithInfo(Utils.java:217)
+	at org.apache.hive.jdbc.HiveStatement.execute(HiveStatement.java:244)
+	at com.taodatarobot.engine.py4j.hive.HiveUtil.uploadToHive(HiveUtil.java:315)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/bank_detail_external->action=*;
+	at org.apache.hive.service.cli.operation.Operation.toSQLException(Operation.java:400)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:187)
+	at org.apache.hive.service.cli.operation.SQLOperation.runInternal(SQLOperation.java:271)
+	at org.apache.hive.service.cli.operation.Operation.run(Operation.java:337)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementInternal(HiveSessionImpl.java:439)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementAsync(HiveSessionImpl.java:416)
+	at org.apache.hive.service.cli.CLIService.executeStatementAsync(CLIService.java:282)
+	at org.apache.hive.service.cli.thrift.ThriftCLIService.ExecuteStatement(ThriftCLIService.java:501)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1313)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1298)
+	at org.apache.thrift.ProcessFunction.process(ProcessFunction.java:39)
+	at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:39)
+	at org.apache.hive.service.auth.TSetIpAddressProcessor.process(TSetIpAddressProcessor.java:56)
+	at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:286)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.parse.SemanticException:No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/bank_detail_external->action=*;
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:528)
+	at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:561)
+	at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1356)
+	at org.apache.hadoop.hive.ql.Driver.compileAndRespond(Driver.java:1343)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:185)
+	... 15 more
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.metadata.AuthorizationException:User robotxdata does not have privileges for CREATETABLE
+	at org.apache.sentry.binding.hive.authz.HiveAuthzBinding.authorize(HiveAuthzBinding.java:320)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.authorizeWithHiveBindings(HiveAuthzBindingHook.java:728)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:513)
+	... 19 more
+
+ERROR 2018-03-26 15:43:50,005 exception 19368 140475499107288 Internal Server Error: /mydata/csv_into_hive
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 340, in csv_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 337, in csv_into_hive
+    load_into_hive(hive_filename, new_csv_saving_path, hdfs_path, hdfs_path_dir, field_list)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 113, in load_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 111, in load_into_hive
+    func(table_name, csv_path, hdfs_path, hdfs_path_dir, ff)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/java_gateway.py", line 1160, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/protocol.py", line 320, in get_return_value
+    format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling o72.uploadToHive.
+: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.jdbc.Utils.verifySuccess(Utils.java:231)
+	at org.apache.hive.jdbc.Utils.verifySuccessWithInfo(Utils.java:217)
+	at org.apache.hive.jdbc.HiveStatement.execute(HiveStatement.java:244)
+	at com.taodatarobot.engine.py4j.hive.HiveUtil.uploadToHive(HiveUtil.java:315)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.service.cli.operation.Operation.toSQLException(Operation.java:400)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:187)
+	at org.apache.hive.service.cli.operation.SQLOperation.runInternal(SQLOperation.java:271)
+	at org.apache.hive.service.cli.operation.Operation.run(Operation.java:337)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementInternal(HiveSessionImpl.java:439)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementAsync(HiveSessionImpl.java:416)
+	at org.apache.hive.service.cli.CLIService.executeStatementAsync(CLIService.java:282)
+	at org.apache.hive.service.cli.thrift.ThriftCLIService.ExecuteStatement(ThriftCLIService.java:501)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1313)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1298)
+	at org.apache.thrift.ProcessFunction.process(ProcessFunction.java:39)
+	at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:39)
+	at org.apache.hive.service.auth.TSetIpAddressProcessor.process(TSetIpAddressProcessor.java:56)
+	at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:286)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.parse.SemanticException:No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:528)
+	at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:561)
+	at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1356)
+	at org.apache.hadoop.hive.ql.Driver.compileAndRespond(Driver.java:1343)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:185)
+	... 15 more
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.metadata.AuthorizationException:User robotxdata does not have privileges for CREATETABLE
+	at org.apache.sentry.binding.hive.authz.HiveAuthzBinding.authorize(HiveAuthzBinding.java:320)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.authorizeWithHiveBindings(HiveAuthzBindingHook.java:728)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:513)
+	... 19 more
+
+ERROR 2018-03-26 15:54:18,708 exception 19368 140475499107288 Internal Server Error: /mydata/csv_into_hive
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 340, in csv_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 337, in csv_into_hive
+    load_into_hive(hive_filename, new_csv_saving_path, hdfs_path, hdfs_path_dir, field_list)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 113, in load_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 111, in load_into_hive
+    func(table_name, csv_path, hdfs_path, hdfs_path_dir, ff)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/java_gateway.py", line 1160, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/protocol.py", line 320, in get_return_value
+    format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling o79.uploadToHive.
+: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.jdbc.Utils.verifySuccess(Utils.java:231)
+	at org.apache.hive.jdbc.Utils.verifySuccessWithInfo(Utils.java:217)
+	at org.apache.hive.jdbc.HiveStatement.execute(HiveStatement.java:244)
+	at com.taodatarobot.engine.py4j.hive.HiveUtil.uploadToHive(HiveUtil.java:315)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.service.cli.operation.Operation.toSQLException(Operation.java:400)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:187)
+	at org.apache.hive.service.cli.operation.SQLOperation.runInternal(SQLOperation.java:271)
+	at org.apache.hive.service.cli.operation.Operation.run(Operation.java:337)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementInternal(HiveSessionImpl.java:439)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementAsync(HiveSessionImpl.java:416)
+	at org.apache.hive.service.cli.CLIService.executeStatementAsync(CLIService.java:282)
+	at org.apache.hive.service.cli.thrift.ThriftCLIService.ExecuteStatement(ThriftCLIService.java:501)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1313)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1298)
+	at org.apache.thrift.ProcessFunction.process(ProcessFunction.java:39)
+	at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:39)
+	at org.apache.hive.service.auth.TSetIpAddressProcessor.process(TSetIpAddressProcessor.java:56)
+	at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:286)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.parse.SemanticException:No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:528)
+	at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:561)
+	at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1356)
+	at org.apache.hadoop.hive.ql.Driver.compileAndRespond(Driver.java:1343)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:185)
+	... 15 more
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.metadata.AuthorizationException:User robotxdata does not have privileges for CREATETABLE
+	at org.apache.sentry.binding.hive.authz.HiveAuthzBinding.authorize(HiveAuthzBinding.java:320)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.authorizeWithHiveBindings(HiveAuthzBindingHook.java:728)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:513)
+	... 19 more
+
+ERROR 2018-03-26 15:55:15,950 exception 19368 140475499107288 Internal Server Error: /mydata/csv_into_hive
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 340, in csv_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 337, in csv_into_hive
+    load_into_hive(hive_filename, new_csv_saving_path, hdfs_path, hdfs_path_dir, field_list)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 113, in load_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 111, in load_into_hive
+    func(table_name, csv_path, hdfs_path, hdfs_path_dir, ff)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/java_gateway.py", line 1160, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/protocol.py", line 320, in get_return_value
+    format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling o9.uploadToHive.
+: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.jdbc.Utils.verifySuccess(Utils.java:231)
+	at org.apache.hive.jdbc.Utils.verifySuccessWithInfo(Utils.java:217)
+	at org.apache.hive.jdbc.HiveStatement.execute(HiveStatement.java:244)
+	at com.taodatarobot.engine.py4j.hive.HiveUtil.uploadToHive(HiveUtil.java:315)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.service.cli.operation.Operation.toSQLException(Operation.java:400)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:187)
+	at org.apache.hive.service.cli.operation.SQLOperation.runInternal(SQLOperation.java:271)
+	at org.apache.hive.service.cli.operation.Operation.run(Operation.java:337)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementInternal(HiveSessionImpl.java:439)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementAsync(HiveSessionImpl.java:416)
+	at org.apache.hive.service.cli.CLIService.executeStatementAsync(CLIService.java:282)
+	at org.apache.hive.service.cli.thrift.ThriftCLIService.ExecuteStatement(ThriftCLIService.java:501)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1313)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1298)
+	at org.apache.thrift.ProcessFunction.process(ProcessFunction.java:39)
+	at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:39)
+	at org.apache.hive.service.auth.TSetIpAddressProcessor.process(TSetIpAddressProcessor.java:56)
+	at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:286)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.parse.SemanticException:No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:528)
+	at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:561)
+	at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1356)
+	at org.apache.hadoop.hive.ql.Driver.compileAndRespond(Driver.java:1343)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:185)
+	... 15 more
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.metadata.AuthorizationException:User robotxdata does not have privileges for CREATETABLE
+	at org.apache.sentry.binding.hive.authz.HiveAuthzBinding.authorize(HiveAuthzBinding.java:320)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.authorizeWithHiveBindings(HiveAuthzBindingHook.java:728)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:513)
+	... 19 more
+
+ERROR 2018-03-26 15:56:16,913 exception 19368 140475316188728 Internal Server Error: /mydata/csv_into_hive
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 340, in csv_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 337, in csv_into_hive
+    load_into_hive(hive_filename, new_csv_saving_path, hdfs_path, hdfs_path_dir, field_list)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 113, in load_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 111, in load_into_hive
+    func(table_name, csv_path, hdfs_path, hdfs_path_dir, ff)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/java_gateway.py", line 1160, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/protocol.py", line 320, in get_return_value
+    format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling o5.uploadToHive.
+: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.jdbc.Utils.verifySuccess(Utils.java:231)
+	at org.apache.hive.jdbc.Utils.verifySuccessWithInfo(Utils.java:217)
+	at org.apache.hive.jdbc.HiveStatement.execute(HiveStatement.java:244)
+	at com.taodatarobot.engine.py4j.hive.HiveUtil.uploadToHive(HiveUtil.java:315)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.service.cli.operation.Operation.toSQLException(Operation.java:400)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:187)
+	at org.apache.hive.service.cli.operation.SQLOperation.runInternal(SQLOperation.java:271)
+	at org.apache.hive.service.cli.operation.Operation.run(Operation.java:337)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementInternal(HiveSessionImpl.java:439)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementAsync(HiveSessionImpl.java:416)
+	at org.apache.hive.service.cli.CLIService.executeStatementAsync(CLIService.java:282)
+	at org.apache.hive.service.cli.thrift.ThriftCLIService.ExecuteStatement(ThriftCLIService.java:501)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1313)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1298)
+	at org.apache.thrift.ProcessFunction.process(ProcessFunction.java:39)
+	at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:39)
+	at org.apache.hive.service.auth.TSetIpAddressProcessor.process(TSetIpAddressProcessor.java:56)
+	at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:286)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.parse.SemanticException:No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:528)
+	at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:561)
+	at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1356)
+	at org.apache.hadoop.hive.ql.Driver.compileAndRespond(Driver.java:1343)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:185)
+	... 15 more
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.metadata.AuthorizationException:User robotxdata does not have privileges for CREATETABLE
+	at org.apache.sentry.binding.hive.authz.HiveAuthzBinding.authorize(HiveAuthzBinding.java:320)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.authorizeWithHiveBindings(HiveAuthzBindingHook.java:728)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:513)
+	... 19 more
+
+ERROR 2018-03-26 15:57:42,480 exception 19368 140475499107288 Internal Server Error: /mydata/csv_into_hive
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 340, in csv_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 337, in csv_into_hive
+    load_into_hive(hive_filename, new_csv_saving_path, hdfs_path, hdfs_path_dir, field_list)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 113, in load_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 111, in load_into_hive
+    func(table_name, csv_path, hdfs_path, hdfs_path_dir, ff)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/java_gateway.py", line 1160, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/protocol.py", line 320, in get_return_value
+    format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling o5.uploadToHive.
+: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.jdbc.Utils.verifySuccess(Utils.java:231)
+	at org.apache.hive.jdbc.Utils.verifySuccessWithInfo(Utils.java:217)
+	at org.apache.hive.jdbc.HiveStatement.execute(HiveStatement.java:244)
+	at com.taodatarobot.engine.py4j.hive.HiveUtil.uploadToHive(HiveUtil.java:315)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.service.cli.operation.Operation.toSQLException(Operation.java:400)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:187)
+	at org.apache.hive.service.cli.operation.SQLOperation.runInternal(SQLOperation.java:271)
+	at org.apache.hive.service.cli.operation.Operation.run(Operation.java:337)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementInternal(HiveSessionImpl.java:439)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementAsync(HiveSessionImpl.java:416)
+	at org.apache.hive.service.cli.CLIService.executeStatementAsync(CLIService.java:282)
+	at org.apache.hive.service.cli.thrift.ThriftCLIService.ExecuteStatement(ThriftCLIService.java:501)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1313)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1298)
+	at org.apache.thrift.ProcessFunction.process(ProcessFunction.java:39)
+	at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:39)
+	at org.apache.hive.service.auth.TSetIpAddressProcessor.process(TSetIpAddressProcessor.java:56)
+	at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:286)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.parse.SemanticException:No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:528)
+	at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:561)
+	at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1356)
+	at org.apache.hadoop.hive.ql.Driver.compileAndRespond(Driver.java:1343)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:185)
+	... 15 more
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.metadata.AuthorizationException:User robotxdata does not have privileges for CREATETABLE
+	at org.apache.sentry.binding.hive.authz.HiveAuthzBinding.authorize(HiveAuthzBinding.java:320)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.authorizeWithHiveBindings(HiveAuthzBindingHook.java:728)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:513)
+	... 19 more
+
+ERROR 2018-03-26 15:58:10,231 exception 19368 140475499107288 Internal Server Error: /mydata/csv_into_hive
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 340, in csv_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 337, in csv_into_hive
+    load_into_hive(hive_filename, new_csv_saving_path, hdfs_path, hdfs_path_dir, field_list)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 113, in load_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 111, in load_into_hive
+    func(table_name, csv_path, hdfs_path, hdfs_path_dir, ff)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/java_gateway.py", line 1160, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/protocol.py", line 320, in get_return_value
+    format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling o12.uploadToHive.
+: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.jdbc.Utils.verifySuccess(Utils.java:231)
+	at org.apache.hive.jdbc.Utils.verifySuccessWithInfo(Utils.java:217)
+	at org.apache.hive.jdbc.HiveStatement.execute(HiveStatement.java:244)
+	at com.taodatarobot.engine.py4j.hive.HiveUtil.uploadToHive(HiveUtil.java:315)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.service.cli.operation.Operation.toSQLException(Operation.java:400)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:187)
+	at org.apache.hive.service.cli.operation.SQLOperation.runInternal(SQLOperation.java:271)
+	at org.apache.hive.service.cli.operation.Operation.run(Operation.java:337)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementInternal(HiveSessionImpl.java:439)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementAsync(HiveSessionImpl.java:416)
+	at org.apache.hive.service.cli.CLIService.executeStatementAsync(CLIService.java:282)
+	at org.apache.hive.service.cli.thrift.ThriftCLIService.ExecuteStatement(ThriftCLIService.java:501)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1313)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1298)
+	at org.apache.thrift.ProcessFunction.process(ProcessFunction.java:39)
+	at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:39)
+	at org.apache.hive.service.auth.TSetIpAddressProcessor.process(TSetIpAddressProcessor.java:56)
+	at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:286)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.parse.SemanticException:No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:528)
+	at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:561)
+	at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1356)
+	at org.apache.hadoop.hive.ql.Driver.compileAndRespond(Driver.java:1343)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:185)
+	... 15 more
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.metadata.AuthorizationException:User robotxdata does not have privileges for CREATETABLE
+	at org.apache.sentry.binding.hive.authz.HiveAuthzBinding.authorize(HiveAuthzBinding.java:320)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.authorizeWithHiveBindings(HiveAuthzBindingHook.java:728)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:513)
+	... 19 more
+
+ERROR 2018-03-26 16:09:10,202 exception 19368 140475499107288 Internal Server Error: /mydata/csv_into_hive
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 340, in csv_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 337, in csv_into_hive
+    load_into_hive(hive_filename, new_csv_saving_path, hdfs_path, hdfs_path_dir, field_list)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 113, in load_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 111, in load_into_hive
+    func(table_name, csv_path, hdfs_path, hdfs_path_dir, ff)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/java_gateway.py", line 1160, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/protocol.py", line 320, in get_return_value
+    format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling o17.uploadToHive.
+: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.jdbc.Utils.verifySuccess(Utils.java:231)
+	at org.apache.hive.jdbc.Utils.verifySuccessWithInfo(Utils.java:217)
+	at org.apache.hive.jdbc.HiveStatement.execute(HiveStatement.java:244)
+	at com.taodatarobot.engine.py4j.hive.HiveUtil.uploadToHive(HiveUtil.java:315)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.service.cli.operation.Operation.toSQLException(Operation.java:400)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:187)
+	at org.apache.hive.service.cli.operation.SQLOperation.runInternal(SQLOperation.java:271)
+	at org.apache.hive.service.cli.operation.Operation.run(Operation.java:337)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementInternal(HiveSessionImpl.java:439)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementAsync(HiveSessionImpl.java:416)
+	at org.apache.hive.service.cli.CLIService.executeStatementAsync(CLIService.java:282)
+	at org.apache.hive.service.cli.thrift.ThriftCLIService.ExecuteStatement(ThriftCLIService.java:501)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1313)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1298)
+	at org.apache.thrift.ProcessFunction.process(ProcessFunction.java:39)
+	at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:39)
+	at org.apache.hive.service.auth.TSetIpAddressProcessor.process(TSetIpAddressProcessor.java:56)
+	at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:286)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.parse.SemanticException:No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:528)
+	at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:561)
+	at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1356)
+	at org.apache.hadoop.hive.ql.Driver.compileAndRespond(Driver.java:1343)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:185)
+	... 15 more
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.metadata.AuthorizationException:User robotxdata does not have privileges for CREATETABLE
+	at org.apache.sentry.binding.hive.authz.HiveAuthzBinding.authorize(HiveAuthzBinding.java:320)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.authorizeWithHiveBindings(HiveAuthzBindingHook.java:728)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:513)
+	... 19 more
+
+ERROR 2018-03-26 16:24:46,624 exception 19368 140475316188728 Internal Server Error: /mydata/csv_into_hive
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 340, in csv_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 337, in csv_into_hive
+    load_into_hive(hive_filename, new_csv_saving_path, hdfs_path, hdfs_path_dir, field_list)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 113, in load_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 111, in load_into_hive
+    func(table_name, csv_path, hdfs_path, hdfs_path_dir, ff)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/java_gateway.py", line 1160, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/protocol.py", line 320, in get_return_value
+    format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling o24.uploadToHive.
+: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.jdbc.Utils.verifySuccess(Utils.java:231)
+	at org.apache.hive.jdbc.Utils.verifySuccessWithInfo(Utils.java:217)
+	at org.apache.hive.jdbc.HiveStatement.execute(HiveStatement.java:244)
+	at com.taodatarobot.engine.py4j.hive.HiveUtil.uploadToHive(HiveUtil.java:315)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.service.cli.operation.Operation.toSQLException(Operation.java:400)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:187)
+	at org.apache.hive.service.cli.operation.SQLOperation.runInternal(SQLOperation.java:271)
+	at org.apache.hive.service.cli.operation.Operation.run(Operation.java:337)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementInternal(HiveSessionImpl.java:439)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementAsync(HiveSessionImpl.java:416)
+	at org.apache.hive.service.cli.CLIService.executeStatementAsync(CLIService.java:282)
+	at org.apache.hive.service.cli.thrift.ThriftCLIService.ExecuteStatement(ThriftCLIService.java:501)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1313)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1298)
+	at org.apache.thrift.ProcessFunction.process(ProcessFunction.java:39)
+	at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:39)
+	at org.apache.hive.service.auth.TSetIpAddressProcessor.process(TSetIpAddressProcessor.java:56)
+	at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:286)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.parse.SemanticException:No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:528)
+	at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:561)
+	at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1356)
+	at org.apache.hadoop.hive.ql.Driver.compileAndRespond(Driver.java:1343)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:185)
+	... 15 more
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.metadata.AuthorizationException:User robotxdata does not have privileges for CREATETABLE
+	at org.apache.sentry.binding.hive.authz.HiveAuthzBinding.authorize(HiveAuthzBinding.java:320)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.authorizeWithHiveBindings(HiveAuthzBindingHook.java:728)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:513)
+	... 19 more
+
+ERROR 2018-03-26 16:30:41,950 exception 19368 140475316188728 Internal Server Error: /mydata/csv_into_hive
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 340, in csv_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 337, in csv_into_hive
+    load_into_hive(hive_filename, new_csv_saving_path, hdfs_path, hdfs_path_dir, field_list)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 113, in load_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 111, in load_into_hive
+    func(table_name, csv_path, hdfs_path, hdfs_path_dir, ff)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/java_gateway.py", line 1160, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/protocol.py", line 320, in get_return_value
+    format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling o47.uploadToHive.
+: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.jdbc.Utils.verifySuccess(Utils.java:231)
+	at org.apache.hive.jdbc.Utils.verifySuccessWithInfo(Utils.java:217)
+	at org.apache.hive.jdbc.HiveStatement.execute(HiveStatement.java:244)
+	at com.taodatarobot.engine.py4j.hive.HiveUtil.uploadToHive(HiveUtil.java:315)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.service.cli.operation.Operation.toSQLException(Operation.java:400)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:187)
+	at org.apache.hive.service.cli.operation.SQLOperation.runInternal(SQLOperation.java:271)
+	at org.apache.hive.service.cli.operation.Operation.run(Operation.java:337)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementInternal(HiveSessionImpl.java:439)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementAsync(HiveSessionImpl.java:416)
+	at org.apache.hive.service.cli.CLIService.executeStatementAsync(CLIService.java:282)
+	at org.apache.hive.service.cli.thrift.ThriftCLIService.ExecuteStatement(ThriftCLIService.java:501)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1313)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1298)
+	at org.apache.thrift.ProcessFunction.process(ProcessFunction.java:39)
+	at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:39)
+	at org.apache.hive.service.auth.TSetIpAddressProcessor.process(TSetIpAddressProcessor.java:56)
+	at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:286)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.parse.SemanticException:No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:528)
+	at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:561)
+	at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1356)
+	at org.apache.hadoop.hive.ql.Driver.compileAndRespond(Driver.java:1343)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:185)
+	... 15 more
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.metadata.AuthorizationException:User robotxdata does not have privileges for CREATETABLE
+	at org.apache.sentry.binding.hive.authz.HiveAuthzBinding.authorize(HiveAuthzBinding.java:320)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.authorizeWithHiveBindings(HiveAuthzBindingHook.java:728)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:513)
+	... 19 more
+
+ERROR 2018-03-26 16:31:10,259 exception 19368 140475316188728 Internal Server Error: /mydata/csv_into_hive
+Traceback (most recent call last):
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/common/UTIL.py", line 47, in wrapper
+    return func(*arg, **kwargs)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 340, in csv_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 337, in csv_into_hive
+    load_into_hive(hive_filename, new_csv_saving_path, hdfs_path, hdfs_path_dir, field_list)
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 113, in load_into_hive
+    raise e
+  File "/home/taoshu/tzb_databrain/engine/db_engine/db_engine/my_data.py", line 111, in load_into_hive
+    func(table_name, csv_path, hdfs_path, hdfs_path_dir, ff)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/java_gateway.py", line 1160, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/home/taoshu/anaconda3/lib/python3.5/site-packages/py4j/protocol.py", line 320, in get_return_value
+    format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling o13.uploadToHive.
+: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.jdbc.Utils.verifySuccess(Utils.java:231)
+	at org.apache.hive.jdbc.Utils.verifySuccessWithInfo(Utils.java:217)
+	at org.apache.hive.jdbc.HiveStatement.execute(HiveStatement.java:244)
+	at com.taodatarobot.engine.py4j.hive.HiveUtil.uploadToHive(HiveUtil.java:315)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.GatewayConnection.run(GatewayConnection.java:214)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.hive.service.cli.operation.Operation.toSQLException(Operation.java:400)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:187)
+	at org.apache.hive.service.cli.operation.SQLOperation.runInternal(SQLOperation.java:271)
+	at org.apache.hive.service.cli.operation.Operation.run(Operation.java:337)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementInternal(HiveSessionImpl.java:439)
+	at org.apache.hive.service.cli.session.HiveSessionImpl.executeStatementAsync(HiveSessionImpl.java:416)
+	at org.apache.hive.service.cli.CLIService.executeStatementAsync(CLIService.java:282)
+	at org.apache.hive.service.cli.thrift.ThriftCLIService.ExecuteStatement(ThriftCLIService.java:501)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1313)
+	at org.apache.hive.service.cli.thrift.TCLIService$Processor$ExecuteStatement.getResult(TCLIService.java:1298)
+	at org.apache.thrift.ProcessFunction.process(ProcessFunction.java:39)
+	at org.apache.thrift.TBaseProcessor.process(TBaseProcessor.java:39)
+	at org.apache.hive.service.auth.TSetIpAddressProcessor.process(TSetIpAddressProcessor.java:56)
+	at org.apache.thrift.server.TThreadPoolServer$WorkerProcess.run(TThreadPoolServer.java:286)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.parse.SemanticException:No valid privileges
+ User robotxdata does not have privileges for CREATETABLE
+ The required privileges: Server=server1->URI=hdfs://node1:8020/user/robotxdata/work_dir/mydata/user_info_external->action=*;
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:528)
+	at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:561)
+	at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1356)
+	at org.apache.hadoop.hive.ql.Driver.compileAndRespond(Driver.java:1343)
+	at org.apache.hive.service.cli.operation.SQLOperation.prepare(SQLOperation.java:185)
+	... 15 more
+Caused by: java.lang.RuntimeException: org.apache.hadoop.hive.ql.metadata.AuthorizationException:User robotxdata does not have privileges for CREATETABLE
+	at org.apache.sentry.binding.hive.authz.HiveAuthzBinding.authorize(HiveAuthzBinding.java:320)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.authorizeWithHiveBindings(HiveAuthzBindingHook.java:728)
+	at org.apache.sentry.binding.hive.HiveAuthzBindingHook.postAnalyze(HiveAuthzBindingHook.java:513)
+	... 19 more
+

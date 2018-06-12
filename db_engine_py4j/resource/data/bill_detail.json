@@ -1,0 +1,68 @@
+{
+  "gen_table" : "bill_detail",
+  "csv_file"  : "data/bill_detail.csv",
+  "delimiter" : ",",
+  "field_type" : [
+    {
+      "type": "varchar(20)",
+      "name": "user_id"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "date"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "bank_id"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "prior_bill_money"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "prior_bill_repay"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "credit_limit"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "current_bill_balance"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "current_bill_minimal_repay"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "consumption_num"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "current_bill_money"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "adjustment"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "revolving_interest"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "available_balance"
+    },
+    {
+      "type": "decimal(10,2)",
+      "name": "borrow_limit"
+    },
+    {
+      "type": "varchar(20)",
+      "name": "repay_status"
+    }
+  ],
+  "upload_hdfs_path" : "/tmp/tmp_bill_detail.csv"
+}

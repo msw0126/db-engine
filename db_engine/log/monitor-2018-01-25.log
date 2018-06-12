@@ -1,0 +1,21 @@
+INFO 2018-01-25 00:48:09,902 monitor 26675 139950655317760 Press Ctrl+C to exit
+INFO 2018-01-25 00:48:35,236 TaskDetect 26675 139950146180864 60-AtomAct13-60_8 submitted to task queue
+INFO 2018-01-25 00:51:51,774 monitor 26860 139824426817280 Press Ctrl+C to exit
+INFO 2018-01-25 00:51:59,435 monitor 26867 139837053630208 Press Ctrl+C to exit
+INFO 2018-01-25 00:52:24,544 TaskDetect 26867 139836407146240 60-AtomAct13-60_9 submitted to task queue
+INFO 2018-01-25 00:54:24,547 TaskDetect 26867 139836407146240 60-AtomLearn8-60_10 submitted to task queue
+INFO 2018-01-25 00:59:14,547 TaskDetect 26867 139836647192320 60-AtomAct13-60_11 submitted to task queue
+INFO 2018-01-25 01:07:34,511 TaskDetect 26867 139836647192320 60-AtomAct13-60_12 submitted to task queue
+INFO 2018-01-25 01:10:29,514 TaskDetect 26867 139836396656384 60-AtomAct13-60_13 submitted to task queue
+INFO 2018-01-25 01:34:54,631 monitor 28209 139707015227136 Press Ctrl+C to exit
+INFO 2018-01-25 01:35:09,790 TaskDetect 28209 139706598299392 60-AtomLearn8-60_14 submitted to task queue
+INFO 2018-01-25 14:45:29,058 monitor 14941 140521181341440 Press Ctrl+C to exit
+INFO 2018-01-25 14:45:34,194 TaskDetect 14941 140520787609344 66-AtomLearn1-66_0 submitted to task queue
+INFO 2018-01-25 14:48:54,177 TaskDetect 14941 140520764413696 66-AtomAct2-66_1 submitted to task queue
+INFO 2018-01-25 14:52:34,211 TaskDetect 14941 140520370198272 66-AtomAct2-66_2 submitted to task queue
+INFO 2018-01-25 14:52:49,145 TaskDetect 14941 140520787609344 60-AtomLearn8-60_15 submitted to task queue
+INFO 2018-01-25 14:55:59,199 TaskDetect 14941 140520753923840 66-AtomLearn1-66_3 submitted to task queue
+INFO 2018-01-25 14:58:54,168 TaskDetect 14941 140520764413696 66-AtomAct2-66_3 submitted to task queue
+INFO 2018-01-25 15:00:24,144 TaskDetect 14941 140520743433984 66-AtomTest3-66_3 submitted to task queue
+INFO 2018-01-29 11:38:59,155 TaskDetect 14941 140520391177984 67-RobotXSpark3-67_0 submitted to task queue
+INFO 2018-01-29 11:41:04,210 TaskDetect 14941 140520359708416 67-FeatureCombine6-67_0 submitted to task queue

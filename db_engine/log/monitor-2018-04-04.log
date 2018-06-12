@@ -1,0 +1,15 @@
+INFO 2018-04-04 09:06:12,212 monitor 13993 139808659805952 Press Ctrl+C to exit
+INFO 2018-04-04 16:36:20,690 monitor 21288 140616259323648 Press Ctrl+C to exit
+INFO 2018-04-04 16:37:40,787 TaskDetect 21288 140615700424448 92-RobotXSpark2-92_7 submitted to task queue
+INFO 2018-04-04 16:40:40,797 TaskDetect 21288 140615721404160 92-FeatureCombine4-92_8 submitted to task queue
+INFO 2018-04-04 16:49:25,772 TaskDetect 21288 140615283111680 92-AtomLearn5-92_9 submitted to task queue
+INFO 2018-04-04 16:54:30,774 TaskDetect 21288 140615850751744 92-AtomAct6-92_10 submitted to task queue
+INFO 2018-04-04 16:56:20,782 TaskDetect 21288 140615731894016 93-RobotXSpark2-93_0 submitted to task queue
+INFO 2018-04-04 16:56:25,760 TaskDetect 21288 140615752873728 92-AtomTest7-92_11 submitted to task queue
+INFO 2018-04-04 16:59:05,752 TaskDetect 21288 140615710914304 93-FeatureCombine4-93_0 submitted to task queue
+INFO 2018-04-04 17:01:30,998 TaskDetect 21288 140615721404160 93-AtomLearn5-93_0 submitted to task queue
+INFO 2018-04-04 17:04:35,771 TaskDetect 21288 140615272621824 93-AtomAct6-93_0 submitted to task queue
+INFO 2018-04-04 17:06:30,769 TaskDetect 21288 140615721404160 93-AtomTest7-93_0 submitted to task queue
+INFO 2018-04-04 17:36:35,779 TaskDetect 21288 140615710914304 94-AtomLearn1-94_0 submitted to task queue
+INFO 2018-04-04 17:39:55,772 TaskDetect 21288 140615710914304 94-AtomAct2-94_0 submitted to task queue
+INFO 2018-04-04 17:41:30,758 TaskDetect 21288 140615721404160 94-AtomTest3-94_0 submitted to task queue

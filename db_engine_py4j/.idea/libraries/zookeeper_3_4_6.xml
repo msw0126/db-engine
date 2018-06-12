@@ -1,0 +1,21 @@
+<component name="libraryTable">
+  <library name="zookeeper-3.4.6">
+    <CLASSES>
+      <root url="jar://F:/impala_jdbc_2.5.28.1047/2.5.28.1047 GA/Cloudera_ImpalaJDBC3_2.5.28.1047/zookeeper-3.4.6.jar!/" />
+      <root url="jar://F:/impala_jdbc_2.5.28.1047/2.5.28.1047 GA/Cloudera_ImpalaJDBC3_2.5.28.1047/TCLIServiceClient.jar!/" />
+      <root url="jar://F:/impala_jdbc_2.5.28.1047/2.5.28.1047 GA/Cloudera_ImpalaJDBC3_2.5.28.1047/slf4j-log4j12-1.5.11.jar!/" />
+      <root url="jar://F:/impala_jdbc_2.5.28.1047/2.5.28.1047 GA/Cloudera_ImpalaJDBC3_2.5.28.1047/slf4j-api-1.5.11.jar!/" />
+      <root url="jar://F:/impala_jdbc_2.5.28.1047/2.5.28.1047 GA/Cloudera_ImpalaJDBC3_2.5.28.1047/ql.jar!/" />
+      <root url="jar://F:/impala_jdbc_2.5.28.1047/2.5.28.1047 GA/Cloudera_ImpalaJDBC3_2.5.28.1047/log4j-1.2.14.jar!/" />
+      <root url="jar://F:/impala_jdbc_2.5.28.1047/2.5.28.1047 GA/Cloudera_ImpalaJDBC3_2.5.28.1047/libthrift-0.9.0.jar!/" />
+      <root url="jar://F:/impala_jdbc_2.5.28.1047/2.5.28.1047 GA/Cloudera_ImpalaJDBC3_2.5.28.1047/libfb303-0.9.0.jar!/" />
+      <root url="jar://F:/impala_jdbc_2.5.28.1047/2.5.28.1047 GA/Cloudera_ImpalaJDBC3_2.5.28.1047/ImpalaJDBC3.jar!/" />
+      <root url="jar://F:/impala_jdbc_2.5.28.1047/2.5.28.1047 GA/Cloudera_ImpalaJDBC3_2.5.28.1047/hive_service.jar!/" />
+      <root url="jar://F:/impala_jdbc_2.5.28.1047/2.5.28.1047 GA/Cloudera_ImpalaJDBC3_2.5.28.1047/hive_metastore.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://F:/impala_jdbc_2.5.28.1047/2.5.28.1047 GA/Cloudera_ImpalaJDBC3_2.5.28.1047/libthrift-0.9.0.jar!/" />
+    </SOURCES>
+  </library>
+</component>

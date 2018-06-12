@@ -1,0 +1,28 @@
+{
+  "gen_table" : "bank_detail",
+  "csv_file"  : "data/bank_detail.csv",
+  "delimiter" : ",",
+  "field_type" : [
+    {
+      "name": "user_id",
+      "type": "varchar(20)"
+    },
+    {
+      "name": "date",
+      "type": "date"
+    },
+    {
+      "name": "trans_type",
+      "type": "varchar(20)"
+    },
+    {
+      "name": "money",
+      "type": "decimal(10,2)"
+    },
+    {
+      "name": "salary_income",
+      "type": "decimal(10,2)"
+    }
+  ],
+  "upload_hdfs_path" : "/tmp/tmp_bank_detail.csv"
+}

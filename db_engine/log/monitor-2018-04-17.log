@@ -1,0 +1,79 @@
+INFO 2018-04-17 09:19:29,278 monitor 29191 140514746709760 Press Ctrl+C to exit
+INFO 2018-04-17 09:24:39,495 TaskDetect 29191 140514072454912 96-AtomLearn2-96_28 submitted to task queue
+INFO 2018-04-17 09:30:14,506 TaskDetect 29191 140514030495488 98-AtomLearn1-98_7 submitted to task queue
+INFO 2018-04-17 09:41:39,413 TaskDetect 29191 140514051475200 98-AtomLearn1-98_8 submitted to task queue
+INFO 2018-04-17 09:43:14,507 TaskDetect 29191 140514304440064 96-AtomLearn2-96_29 submitted to task queue
+INFO 2018-04-17 09:44:24,421 TaskDetect 29191 140514030495488 98-AtomLearn1-98_9 submitted to task queue
+INFO 2018-04-17 09:47:59,421 TaskDetect 29191 140514072454912 96-AtomLearn2-96_30 submitted to task queue
+INFO 2018-04-17 09:49:14,463 TaskDetect 29191 140514040985344 98-AtomLearn1-98_10 submitted to task queue
+INFO 2018-04-17 09:52:14,488 TaskDetect 29191 140514325419776 96-AtomLearn2-96_31 submitted to task queue
+INFO 2018-04-17 09:53:29,488 TaskDetect 29191 140514338137856 98-AtomLearn1-98_11 submitted to task queue
+INFO 2018-04-17 09:55:54,440 TaskDetect 29191 140514040985344 96-AtomLearn2-96_32 submitted to task queue
+INFO 2018-04-17 10:12:13,909 monitor 31793 140567502587648 Press Ctrl+C to exit
+INFO 2018-04-17 10:17:34,630 monitor 31982 140185633208064 Press Ctrl+C to exit
+INFO 2018-04-17 10:18:54,880 TaskDetect 31982 140184981075712 98-AtomLearn1-98_12 submitted to task queue
+INFO 2018-04-17 10:24:11,364 monitor 1369 140107976087296 Press Ctrl+C to exit
+INFO 2018-04-17 10:33:15,182 monitor 2627 140686570112768 Press Ctrl+C to exit
+INFO 2018-04-17 10:58:22,048 monitor 5868 140510432278272 Press Ctrl+C to exit
+INFO 2018-04-17 11:15:39,260 monitor 7998 139693923579648 Press Ctrl+C to exit
+INFO 2018-04-17 11:49:09,410 TaskDetect 7998 139693253449472 100-RobotXSpark6-100_0 submitted to task queue
+INFO 2018-04-17 15:49:24,381 TaskDetect 7998 139693232469760 98-AtomLearn1-98_13 submitted to task queue
+INFO 2018-04-18 11:31:39,425 TaskDetect 7998 139693253449472 100-AtomLearn7-100_1 submitted to task queue
+INFO 2018-04-18 12:01:34,399 TaskDetect 7998 139693502289664 100-AtomAct8-100_2 submitted to task queue
+INFO 2018-04-18 12:38:39,385 TaskDetect 7998 139693515007744 100-AtomTest11-100_3 submitted to task queue
+INFO 2018-04-18 12:41:59,363 TaskDetect 7998 139693515007744 100-AtomTest11-100_4 submitted to task queue
+INFO 2018-04-18 12:44:49,376 TaskDetect 7998 139692871776000 100-AtomAct8-100_5 submitted to task queue
+INFO 2018-04-18 12:48:04,373 TaskDetect 7998 139693263939328 100-AtomTest11-100_6 submitted to task queue
+INFO 2018-04-24 10:04:45,615 TaskDetect 7998 139693263939328 101-AtomLearn2-101_0 submitted to task queue
+INFO 2018-04-24 10:08:34,537 TaskDetect 7998 139693232469760 101-AtomAct3-101_1 submitted to task queue
+INFO 2018-04-24 10:12:09,376 TaskDetect 7998 139693221979904 101-AtomTest4-101_2 submitted to task queue
+INFO 2018-04-24 10:41:09,385 TaskDetect 7998 139693515007744 101-AtomAct3-101_3 submitted to task queue
+INFO 2018-04-24 10:43:04,384 TaskDetect 7998 139693263939328 101-AtomTest4-101_4 submitted to task queue
+INFO 2018-04-24 10:58:34,363 TaskDetect 7998 139693232469760 101-AtomAct3-101_5 submitted to task queue
+INFO 2018-04-24 11:07:29,449 TaskDetect 7998 139693253449472 101-AtomAct6-101_6 submitted to task queue
+INFO 2018-04-24 11:11:34,420 TaskDetect 7998 139693502289664 101-AtomTest7-101_7 submitted to task queue
+INFO 2018-04-24 14:57:39,414 TaskDetect 7998 139693242959616 102-AtomLearn1-102_0 submitted to task queue
+INFO 2018-04-24 15:04:14,461 TaskDetect 7998 139693274429184 101-AtomLearn2-101_8 submitted to task queue
+INFO 2018-04-24 15:09:49,376 TaskDetect 7998 139692871776000 101-AtomAct3-101_9 submitted to task queue
+INFO 2018-04-24 15:13:09,365 TaskDetect 7998 139692871776000 101-AtomAct6-101_10 submitted to task queue
+INFO 2018-04-24 15:14:14,363 TaskDetect 7998 139693274429184 102-AtomLearn1-102_1 submitted to task queue
+INFO 2018-04-24 15:17:19,362 TaskDetect 7998 139692871776000 102-AtomAct2-102_2 submitted to task queue
+INFO 2018-04-24 15:23:29,366 TaskDetect 7998 139693242959616 102-AtomAct4-102_3 submitted to task queue
+INFO 2018-04-24 16:19:14,506 TaskDetect 7998 139693274429184 100-RobotXSpark14-100_7 submitted to task queue
+INFO 2018-04-24 16:36:29,375 TaskDetect 7998 139692871776000 102-AtomAct4-102_4 submitted to task queue
+INFO 2018-04-24 16:37:19,354 TaskDetect 7998 139692871776000 100-AtomAct8-100_8 submitted to task queue
+INFO 2018-04-24 16:42:49,416 TaskDetect 7998 139693515007744 102-AtomAct4-102_5 submitted to task queue
+INFO 2018-04-24 16:46:44,371 TaskDetect 7998 139693274429184 102-AtomAct4-102_6 submitted to task queue
+INFO 2018-04-24 16:52:49,370 TaskDetect 7998 139693515007744 100-AtomAct8-100_9 submitted to task queue
+INFO 2018-04-24 17:00:54,370 TaskDetect 7998 139693274429184 100-RobotXSpark14-100_10 submitted to task queue
+INFO 2018-04-24 17:02:14,366 TaskDetect 7998 139693263939328 102-AtomAct4-102_7 submitted to task queue
+INFO 2018-04-24 17:05:39,400 TaskDetect 7998 139692871776000 100-AtomAct8-100_11 submitted to task queue
+INFO 2018-04-24 17:20:54,376 TaskDetect 7998 139693274429184 102-AtomLearn1-102_8 submitted to task queue
+INFO 2018-04-24 17:23:39,370 TaskDetect 7998 139693515007744 102-AtomAct4-102_9 submitted to task queue
+INFO 2018-04-24 17:26:04,431 TaskDetect 7998 139693232469760 102-AtomAct4-102_10 submitted to task queue
+INFO 2018-04-24 17:40:14,400 TaskDetect 7998 139693232469760 102-AtomAct4-102_11 submitted to task queue
+INFO 2018-04-24 17:49:04,420 TaskDetect 7998 139693502289664 102-AtomAct4-102_12 submitted to task queue
+INFO 2018-04-25 10:08:04,389 TaskDetect 7998 139693263939328 102-AtomLearn1-102_13 submitted to task queue
+INFO 2018-04-25 10:14:24,365 TaskDetect 7998 139693232469760 102-AtomAct4-102_14 submitted to task queue
+INFO 2018-04-25 16:49:54,388 TaskDetect 7998 139693502289664 102-AtomAct4-102_15 submitted to task queue
+INFO 2018-04-25 18:05:19,376 TaskDetect 7998 139693515007744 102-AtomAct4-102_16 submitted to task queue
+INFO 2018-04-26 11:49:59,430 TaskDetect 7998 139693253449472 102-AtomLearn1-102_17 submitted to task queue
+INFO 2018-04-26 12:50:54,368 TaskDetect 7998 139693274429184 102-AtomLearn1-102_18 submitted to task queue
+INFO 2018-04-26 13:13:49,414 TaskDetect 7998 139693221979904 102-AtomAct4-102_19 submitted to task queue
+INFO 2018-04-26 15:47:14,369 TaskDetect 7998 139693263939328 102-AtomAct4-102_20 submitted to task queue
+INFO 2018-04-26 15:55:54,374 TaskDetect 7998 139693274429184 102-AtomAct4-102_21 submitted to task queue
+INFO 2018-04-26 15:58:49,363 TaskDetect 7998 139693221979904 102-AtomAct4-102_22 submitted to task queue
+INFO 2018-04-26 16:01:39,429 TaskDetect 7998 139693253449472 102-AtomAct4-102_23 submitted to task queue
+INFO 2018-04-26 16:04:24,380 TaskDetect 7998 139693232469760 102-AtomAct4-102_24 submitted to task queue
+INFO 2018-04-26 16:06:44,362 TaskDetect 7998 139693274429184 102-AtomAct4-102_25 submitted to task queue
+INFO 2018-04-26 16:09:04,371 TaskDetect 7998 139693502289664 102-AtomAct4-102_26 submitted to task queue
+INFO 2018-04-26 16:11:34,412 TaskDetect 7998 139693502289664 102-AtomAct4-102_27 submitted to task queue
+INFO 2018-04-26 16:13:59,419 TaskDetect 7998 139692871776000 102-AtomAct4-102_28 submitted to task queue
+INFO 2018-04-26 16:16:19,369 TaskDetect 7998 139693221979904 102-AtomAct4-102_29 submitted to task queue
+INFO 2018-04-26 16:18:49,368 TaskDetect 7998 139693221979904 102-AtomAct4-102_30 submitted to task queue
+INFO 2018-04-26 16:21:14,426 TaskDetect 7998 139693491799808 102-AtomAct4-102_31 submitted to task queue
+INFO 2018-04-26 16:23:34,458 TaskDetect 7998 139693232469760 102-AtomAct4-102_32 submitted to task queue
+INFO 2018-04-26 16:25:59,458 TaskDetect 7998 139693242959616 102-AtomAct4-102_33 submitted to task queue
+INFO 2018-04-26 16:28:19,365 TaskDetect 7998 139693253449472 102-AtomAct4-102_34 submitted to task queue
+INFO 2018-04-26 16:31:34,364 TaskDetect 7998 139693502289664 102-AtomAct4-102_35 submitted to task queue
+INFO 2018-04-26 16:34:19,413 TaskDetect 7998 139693242959616 102-AtomAct4-102_36 submitted to task queue

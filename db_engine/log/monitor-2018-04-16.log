@@ -1,0 +1,40 @@
+INFO 2018-04-16 09:21:34,886 monitor 1908 139974582339328 Press Ctrl+C to exit
+INFO 2018-04-16 09:23:20,087 TaskDetect 1908 139973913208576 95-AtomLearn1-95_0 submitted to task queue
+INFO 2018-04-16 09:27:20,032 TaskDetect 1908 139973871249152 95-AtomLearn1-95_1 submitted to task queue
+INFO 2018-04-16 09:35:57,138 monitor 2405 139641957480192 Press Ctrl+C to exit
+INFO 2018-04-16 09:37:32,285 TaskDetect 2405 139641042753280 96-AtomLearn2-96_0 submitted to task queue
+INFO 2018-04-16 09:38:22,239 TaskDetect 2405 139641042753280 96-AtomLearn2-96_1 submitted to task queue
+INFO 2018-04-16 09:40:07,249 TaskDetect 2405 139641434916608 96-AtomLearn2-96_2 submitted to task queue
+INFO 2018-04-16 09:43:17,269 TaskDetect 2405 139641053243136 96-AtomAct3-96_3 submitted to task queue
+INFO 2018-04-16 09:45:37,242 TaskDetect 2405 139641445406464 96-AtomTest4-96_4 submitted to task queue
+INFO 2018-04-16 09:53:07,278 TaskDetect 2405 139641445406464 96-AtomLearn2-96_5 submitted to task queue
+INFO 2018-04-16 10:32:17,272 TaskDetect 2405 139641445406464 96-AtomLearn2-96_6 submitted to task queue
+INFO 2018-04-16 10:36:27,239 TaskDetect 2405 139641445406464 96-AtomLearn2-96_7 submitted to task queue
+INFO 2018-04-16 10:39:07,247 TaskDetect 2405 139641053243136 96-AtomLearn2-96_8 submitted to task queue
+INFO 2018-04-16 13:28:14,969 monitor 7168 140505870894848 Press Ctrl+C to exit
+INFO 2018-04-16 13:50:45,251 TaskDetect 7168 140505214084864 96-AtomLearn2-96_9 submitted to task queue
+INFO 2018-04-16 14:05:25,202 TaskDetect 7168 140505462322944 96-AtomLearn2-96_10 submitted to task queue
+INFO 2018-04-16 14:06:45,188 TaskDetect 7168 140505203595008 96-AtomLearn2-96_11 submitted to task queue
+INFO 2018-04-16 14:10:15,219 TaskDetect 7168 140505224574720 96-AtomLearn2-96_12 submitted to task queue
+INFO 2018-04-16 14:19:25,221 TaskDetect 7168 140505224574720 96-AtomLearn2-96_13 submitted to task queue
+INFO 2018-04-16 14:25:25,188 TaskDetect 7168 140505462322944 96-AtomLearn2-96_14 submitted to task queue
+INFO 2018-04-16 14:27:30,189 TaskDetect 7168 140505439115008 96-AtomLearn2-96_15 submitted to task queue
+INFO 2018-04-16 14:30:45,207 TaskDetect 7168 140505214084864 96-AtomLearn2-96_16 submitted to task queue
+INFO 2018-04-16 14:31:55,185 TaskDetect 7168 140505224574720 96-AtomLearn2-96_17 submitted to task queue
+INFO 2018-04-16 14:34:35,177 TaskDetect 7168 140505462322944 96-AtomLearn2-96_18 submitted to task queue
+INFO 2018-04-16 14:42:10,185 TaskDetect 7168 140505449604864 96-AtomLearn2-96_19 submitted to task queue
+INFO 2018-04-16 14:46:05,192 TaskDetect 7168 140505224574720 96-AtomLearn2-96_20 submitted to task queue
+INFO 2018-04-16 14:50:10,191 TaskDetect 7168 140505193105152 96-AtomLearn2-96_21 submitted to task queue
+INFO 2018-04-16 14:50:30,175 TaskDetect 7168 140505449604864 96-AtomLearn2-96_22 submitted to task queue
+INFO 2018-04-16 14:51:30,184 TaskDetect 7168 140504821921536 96-AtomLearn2-96_23 submitted to task queue
+INFO 2018-04-16 15:01:35,176 TaskDetect 7168 140505214084864 96-AtomLearn2-96_24 submitted to task queue
+INFO 2018-04-16 15:05:25,181 TaskDetect 7168 140505462322944 98-AtomLearn1-98_0 submitted to task queue
+INFO 2018-04-16 15:09:00,238 TaskDetect 7168 140504821921536 98-AtomLearn1-98_1 submitted to task queue
+INFO 2018-04-16 15:18:55,194 TaskDetect 7168 140505172125440 98-AtomLearn1-98_2 submitted to task queue
+INFO 2018-04-16 15:25:50,179 TaskDetect 7168 140505439115008 96-AtomLearn2-96_25 submitted to task queue
+INFO 2018-04-16 15:29:40,185 TaskDetect 7168 140505449604864 96-AtomLearn2-96_26 submitted to task queue
+INFO 2018-04-16 15:34:40,190 TaskDetect 7168 140505449604864 98-AtomLearn1-98_3 submitted to task queue
+INFO 2018-04-16 15:36:05,175 TaskDetect 7168 140505224574720 98-AtomLearn1-98_4 submitted to task queue
+INFO 2018-04-16 15:38:50,176 TaskDetect 7168 140505449604864 98-AtomLearn1-98_5 submitted to task queue
+INFO 2018-04-16 15:42:05,192 TaskDetect 7168 140505462322944 98-AtomLearn1-98_6 submitted to task queue
+INFO 2018-04-16 18:55:55,190 TaskDetect 7168 140505203595008 96-AtomLearn2-96_27 submitted to task queue
